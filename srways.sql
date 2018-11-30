@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jul 07, 2018 at 12:28 PM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.21
+-- Host: 127.0.0.1
+-- Generation Time: Nov 30, 2018 at 07:33 PM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 7.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `users`
+-- Database: `srways`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `srways`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -42,7 +42,7 @@ INSERT INTO `admin` (`id`, `uname`, `pass`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `userdetails`
 --
 
 CREATE TABLE `userdetails` (
@@ -54,3 +54,7 @@ CREATE TABLE `userdetails` (
   `city` varchar(100) NOT NULL,
   `postcode` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

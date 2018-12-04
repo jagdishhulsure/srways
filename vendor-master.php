@@ -278,45 +278,28 @@
                     <div class="col-lg-8">
                             
                             <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                                    <span class="badge badge-pill badge-success">Edit</span><a href="userdetails.html">User details</a>
+                                    <span class="badge badge-pill badge-success">Edit</span><a href="vendordetails.php">Vendor details</a>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
                                 </div>
                         <div class="card">
                             
-                            <div class="card-header"><strong>User Create</strong><small></small></div>
+                            <div class="card-header"><strong>Vendor Create</strong><small></small></div>
                             <div class="card-body card-block">
                                 <div class="form-group">
-                                    <label for="fname" class=" form-control-label">First Name</label>
-                                    <input type="text" id="fname" placeholder="Enter your first name" class="form-control">
+                                    <label for="vname" class="form-control-label">Vendor Name</label>
+                                    <input type="text" id="vname" placeholder="Enter vendor name" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email" class=" form-control-label">E-mail</label>
-                                    <input type="email" id="email" placeholder="Enter your email" class="form-control">
+                                    <label for="gst" class=" form-control-label">GST No.</label>
+                                    <input type="text" id="gst" placeholder="Enter GST No." class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone" class=" form-control-label">Phone</label>
-                                    <input type="phone" id="phone" placeholder="Enter phone number" class="form-control">
+                                    <label for="phone" class=" form-control-label">PAN No.</label>
+                                    <input type="text" id="pan" placeholder="Enter PAN number" class="form-control">
                                 </div>
-                                <div class="row form-group">
-                                    <div class="col-8">
-                                        <div class="form-group">
-                                            <label for="address" class=" form-control-label">Address</label>
-                                            <textarea  id="address" placeholder="Enter your address" class="form-control"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                    <div class="form-group">
-                                        <label for="postal-code" class=" form-control-label">Postal Code</label>
-                                        <input type="text" id="postal-code" placeholder="Postal Code" class="form-control">
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="city" class=" form-control-label">City</label>
-                                    <input type="text" id="city" placeholder="City name" class="form-control">
-                                </div>
+                              
                                 <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>    
                             </div>
                             </div>

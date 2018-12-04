@@ -278,7 +278,7 @@
                     <div class="col-lg-8">
                             
                             <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                                    <span class="badge badge-pill badge-success">Edit</span><a href="userdetails.html">User details</a>
+                                    <span class="badge badge-pill badge-success">Edit</span><a href="userdetails.php">User details</a>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>

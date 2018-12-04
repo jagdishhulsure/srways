@@ -15,6 +15,9 @@
 
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/custome.css">
+
 
 
     <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
@@ -22,13 +25,12 @@
     <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-
-
 </head>
 
 <body>
@@ -110,7 +112,7 @@
                             <li><i class="fa fa-id-card-o"></i><a href="expense-report.php">Expense Report</a></li>
                         </ul>
                     </li>
-                </ul>
+                </ul>  
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside><!-- /#left-panel -->
@@ -252,7 +254,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Activity</h1>
+                        <h1>Dashboard</h1>
                     </div>
                 </div>
             </div>
@@ -261,8 +263,8 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Forms</a></li>
-                            <li class="active">Basic</li>
+                            <li><a href="#">Table</a></li>
+                            <li class="active">Data table</li>
                         </ol>
                     </div>
                 </div>
@@ -272,32 +274,134 @@
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-                 
-                    <!--/.col-->
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-8">
-                            
-                         
-                        <div class="card">
-                            
-                            <div class="card-header"><strong>Coming soon</strong><small></small></div>
-                                                            
 
-                                            
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Customer details</strong>
+                            </div>
+                            <div class="card-body">
+                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Customer Name</th>
+                                            <th>Address</th>
+                                            <th>Contact Person</th>
+                                            <th>Telephone No.</th>
+                                            <th>Mobile No.</th>
+                                            <th>GST No.</th>
+                                            <th>PIN Code</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Jacks</td>
+                                            <td>#5, 1st Floor 6th main Bangalore</td>
+                                            <td>Sandeep</td>
+                                            <td>9738720991</td>
+                                            <td>7411528283</td>
+                                            <td>444566</td>
+                                            <td>560013</td>
+                                            <td>
+                                                <a title="Edit" href="#">
+                                                    <span class="glyphicon glyphicon-edit"></span>
+                                                    </a> &nbsp;
+                                                    <a href="#" title="Delete">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacks</td>
+                                            <td>#5, 1st Floor 6th main Bangalore</td>
+                                            <td>Sandeep</td>
+                                            <td>9738720991</td>
+                                            <td>7411528283</td>
+                                            <td>444566</td>
+                                            <td>560013</td>
+                                            <td>
+                                                <a title="Edit" href="#">
+                                                    <span class="glyphicon glyphicon-edit"></span>
+                                                    </a> &nbsp;
+                                                    <a href="#" title="Delete">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacks</td>
+                                            <td>#5, 1st Floor 6th main Bangalore</td>
+                                            <td>Sandeep</td>
+                                            <td>9738720991</td>
+                                            <td>7411528283</td>
+                                            <td>444566</td>
+                                            <td>560013</td>
+                                            <td>
+                                                <a title="Edit" href="#">
+                                                    <span class="glyphicon glyphicon-edit"></span>
+                                                    </a> &nbsp;
+                                                    <a href="#" title="Delete">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacks</td>
+                                            <td>#5, 1st Floor 6th main Bangalore</td>
+                                            <td>Sandeep</td>
+                                            <td>9738720991</td>
+                                            <td>7411528283</td>
+                                            <td>444566</td>
+                                            <td>560013</td>
+                                            <td>
+                                                <a title="Edit" href="#">
+                                                    <span class="glyphicon glyphicon-edit"></span>
+                                                    </a> &nbsp;
+                                                    <a href="#" title="Delete">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    </a>
+                                            </td>
+                                        </tr>
+                                       
+                                        
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div><!-- .animated -->
-                </div><!-- .content -->
-            </div><!-- /#right-panel -->
-            <!-- Right Panel -->
+                    </div>
+
+
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
 
 
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-
-    <script src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
     <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+
+    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="vendors/jszip/dist/jszip.min.js"></script>
+    <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
+
+
 </body>
+
 </html>

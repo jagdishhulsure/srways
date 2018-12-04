@@ -253,7 +253,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>LR Entry Booking Details</h1>
                     </div>
                 </div>
             </div>
@@ -277,12 +277,13 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Indent booking details</strong>
+                                <strong class="card-title">LR Entry booking details</strong>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
+                                        <th>Challen Number</th>
                                             <th>V Number</th>
                                             <th>C Name</th>
                                             <th>From</th>
@@ -295,6 +296,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
+                                        <td>111</td>
                                             <td>KA 39,L 6413</td>
                                             <td>Jagdish</td>
                                             <td>Bangalore</td>
@@ -310,6 +312,7 @@
                                                     </a></td>
                                         </tr>
                                         <tr>
+                                        <td>222</td>
                                             <td>KA 39,L 6413</td>
                                             <td>Jagdish</td>
                                             <td>Bangalore</td>
@@ -327,6 +330,7 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                        <td>333</td>
                                             <td>KA 39,L 6413</td>
                                             <td>Jagdish</td>
                                             <td>Bangalore</td>
@@ -344,6 +348,7 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                        <td>444</td>
                                             <td>KA 39,L 6413</td>
                                             <td>Jagdish</td>
                                             <td>Bangalore</td>

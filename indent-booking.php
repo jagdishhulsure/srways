@@ -252,7 +252,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>Indent Booking</h1>
                     </div>
                 </div>
             </div>
@@ -278,7 +278,7 @@
                     <div class="col-lg-8">
                             
                             <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                                    <span class="badge badge-pill badge-success">Edit</span><a href="indent-booking-details.html">Indent booking details</a>
+                                    <span class="badge badge-pill badge-success">Edit</span><a href="indentbookingdetails.php">Indent booking details</a>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
@@ -303,6 +303,26 @@
                                     <label for="to" class=" form-control-label">To</label>
                                     <input type="text" id="to" placeholder="To: Place name" class="form-control">
                                 </div>
+                                
+                                <div class="form-group">
+                                <label for="vehicletype" class=" form-control-label">Vehicle Type</label>
+                                <select name="vehicletype" placeholder="Choose a vehicle type..." class="form-control" tabindex="1">
+                                    <option value=""></option>
+                                    <option value="17 feet close">17 feet close</option>
+                                    <option value="17 feet open">17 feet open</option>
+                                    <option value="19 feet close">19 feet close</option>
+                                    <option value="20 feet close">20 feet close</option>
+                                    <option value="22 feet close">22 feet close</option>
+                                    <option value="24 feet close">24 feet close</option>
+                                    <option value="32 feet XL">32 feet XL</option>
+                                    <option value="32 feet XXL">32 feet XXL</option>
+                                    <option value="20 feet trailer">20 feet trailer</option>
+                                    <option value="40 feet trailer">40 feet trailer</option>
+                                   
+                                </select>
+                                </div>
+                                
+
                                 <div class="form-group">
                                     <label for="totalfare" class=" form-control-label">Total Amout</label>
                                     <input type="text" id="totalfare" placeholder="Total amount" class="form-control">

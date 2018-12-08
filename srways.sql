@@ -55,6 +55,24 @@ CREATE TABLE `userdetails` (
   `postcode` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+CREATE TABLE `indentbooking` (
+  `ib_number` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `ib_number` varchar(100) NOT NULL,
+  `ibvnumber` varchar(50) NOT NULL,
+  `ibcname` varchar(100) NOT NULL,
+  `ibfrom` varchar(200) NOT NULL,
+  `ibto` varchar(100) NOT NULL,
+  `ibvehicletype` varchar(100) NOT NULL,
+  `ibtotalfare` varchar(200) NOT NULL,
+  `ibamountpaid` varchar(100) NOT NULL,
+  `ibbalance` varchar(100) NOT NULL,
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`ib_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

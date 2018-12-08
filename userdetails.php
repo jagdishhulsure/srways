@@ -82,7 +82,7 @@
                             <li><i class="fa fa-bars"></i><a href="driver-master.php">Driver Master</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="vehicle-allotment.php">Vehicle Allotment</a></li>
                             
-                            <li><i class="fa fa-share-square-o"></i><a href="vehicle-maintainance.php">Vehicle Maintainance</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="vehicle-maintenance.php">Vehicle Maintainance</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="agent-master.php">Agent Master</a></li>
                            
                         </ul>

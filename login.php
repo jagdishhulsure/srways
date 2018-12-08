@@ -94,7 +94,7 @@ session_start();
 </html>
 <?php
 
-include("conection.php");
+include("connection.php");
 
 if(isset($_POST['login']))
 {

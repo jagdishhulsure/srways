@@ -163,7 +163,7 @@
                                         <span aria-hidden="true">×</span>
                                     </button>
                                 </div>
-                        <div class="card">
+                        <div class="card"> 
                             
                             <div class="card-header"><strong>Indent Booking</strong><small></small></div>
                             <div class="card-body card-block">
@@ -177,7 +177,7 @@
                                     <label for="cname" class=" form-control-label">Customer Name</label>
                                     <input type="text" id="ibcname" name="ibcname" placeholder="Enter customer name" class="form-control">
                                 </div>
-                                <div class="form-group">
+                                                                <div class="form-group">
                                     <label for="from" class=" form-control-label">From</label>
                                     <input type="text" name="ibfrom" id="from" placeholder="From: Place name" class="form-control">
                                 </div>

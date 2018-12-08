@@ -349,7 +349,7 @@
                                 </div>
 
                                  <div class="form-group">
-                                    <label for="noofpackages" class=" form-control-label">Number of Packages</label>
+                                  <label for="noofpackages" class=" form-control-label">Number of Packages</label>
                                     <input type="text" id="noofpackages" placeholder="Number of Packages" class="form-control">
                                 </div>
                                 <div class="form-group">

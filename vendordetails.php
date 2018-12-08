@@ -306,7 +306,7 @@
                                         </tr>
                                         <tr>
                                             <td>Jagdish</td>
-                                            <td>9988885555</td>
+                                             <td>9988885555</td>
                                             <td>Bangalore</td>
                                             <td>
                                                 <a title="Edit" href="#">

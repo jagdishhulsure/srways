@@ -305,7 +305,7 @@
                                     <label for="damages" class=" form-control-label">Damages</label>
                                     <input type="text" id="damages" placeholder="Damages" class="form-control">
                                 </div>
-                                <div class="form-group">
+                               <div class="form-group">
                                     <label for="shortage" class=" form-control-label">Shortage</label>
                                     <input type="text" id="shortage" placeholder="Shortage" class="form-control">
                                 </div>

@@ -360,7 +360,7 @@
                                             <a title="Edit" href="#">
                                                 <span class="glyphicon glyphicon-edit"></span>
                                               </a> &nbsp;
-                                              <a href="#" title="Delete">
+                                            <a href="#" title="Delete">
                                                 <span class="glyphicon glyphicon-remove"></span>
                                               </a></td>
                                         </tr>

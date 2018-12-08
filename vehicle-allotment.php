@@ -309,7 +309,7 @@
                                     <option value="32 feet XXL">32 feet XXL</option>
                                     <option value="20 feet trailer">20 feet trailer</option>
                                     <option value="40 feet trailer">40 feet trailer</option>
-                                </select>
+                                </select> 
                                 </div>
                                 <div class="form-group">
                                 <label for="drivername" class=" form-control-label">Driver Name</label>
@@ -319,7 +319,7 @@
                                     <option value="sandeep">Sandeep</option>
                                     <option value="shankar">Shankar</option>
                                 </select>
-                                </div>
+                             </div>
                                 <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Search</button>    
                             </div>
                             </div>

@@ -277,7 +277,7 @@
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
                             
-                         
+                          
                         <div class="card">
                             
                             <div class="card-header"><strong>Coming soon</strong><small></small></div>

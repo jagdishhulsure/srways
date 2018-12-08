@@ -31,7 +31,7 @@ CREATE TABLE `admin` (
   `uname` varchar(100) NOT NULL,
   `pass` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+ 
 --
 -- Dumping data for table `admin`
 --
@@ -42,7 +42,7 @@ INSERT INTO `admin` (`id`, `uname`, `pass`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userdetails`
+-- Table structure for table `userdetails` 
 --
 
 CREATE TABLE `userdetails` (

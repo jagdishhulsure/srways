@@ -279,7 +279,7 @@
                                     <span class="badge badge-pill badge-success">Edit</span><a href="vehicleentrydetails.php">Vehicle Entry details</a>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">×</span>
-                                    </button>
+                                     </button>
                                 </div>
                     <!--/.col-->
                     

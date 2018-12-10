@@ -87,7 +87,7 @@ session_start();
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
     <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
- 
+
 
 </body>
 
@@ -103,7 +103,7 @@ if(isset($_POST['login']))
 
     $check_user="select * from admin WHERE uname='$uname'AND pass='$pass'";
 
-    $run=mysqli_query($dbcon,$check_user);
+    $run=mysqli_query($conn,$check_user);
 
     if(mysqli_num_rows($run))
     {

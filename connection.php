@@ -1,8 +1,8 @@
 <?php
 
 
-$dbcon=mysqli_connect("localhost","root","");
+$conn=mysqli_connect("localhost","root","password");
 
-mysqli_select_db($dbcon,"srways");
+mysqli_select_db($conn,"testdb");
 
-?> 
+?>

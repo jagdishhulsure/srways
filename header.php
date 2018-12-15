@@ -59,8 +59,8 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="userdetails.php">Manage Users</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="user-rights.php">User Rights</a></li>
-                            <li><i class="fa fa-bars"></i><a href="customer-master.php">Customer Master</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="vendor-master.php">Vendor Master</a></li>
+                            <li><i class="fa fa-bars"></i><a href="customerdetails.php">Customer Master</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="vendordetails.php">Vendor Master</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="activity.php">ACT</a></li>
                             <li><i class="fa fa-exclamation-triangle"></i><a href="branch.php">Branch</a></li>
                             <li><i class="fa fa-spinner"></i><a href="financial-year.php">FY</a></li>

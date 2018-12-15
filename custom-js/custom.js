@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
                 targets: 6,
                 orderable: false,
                 render: function(data, type, row, meta) {
-                    return '<a href="customer/' + row["uid"] + '/edit">Edit</a>';
+                    return '<a href="edituser.php?id=' + row["uid"] + '">Edit</a>';
                 }
             }
         ]

@@ -25,8 +25,6 @@
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-
-                    <!--/.col-->
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
 

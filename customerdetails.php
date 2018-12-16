@@ -1,6 +1,4 @@
 <?php include('header.php'); ?>
-
-
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -21,18 +19,17 @@
                 </div>
             </div>
         </div>
-
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Customer details</strong>
+                                <strong class="card-title">Customers</strong>
+                                <a href="customer-master.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i> Create Customer </a>
                             </div>
                             <div class="card-body">
-                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                <table id="customerList" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
                                             <th>Customer Name</th>
@@ -45,91 +42,12 @@
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Jacks</td>
-                                            <td>#5, 1st Floor 6th main Bangalore</td>
-                                            <td>Sandeep</td>
-                                            <td>9738720991</td>
-                                            <td>7411528283</td>
-                                            <td>444566</td>
-                                            <td>560013</td>
-                                            <td>
-                                                <a title="Edit" href="#">
-                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                    </a> &nbsp;
-                                                    <a href="#" title="Delete">
-                                                    <span class="glyphicon glyphicon-remove"></span>
-                                                    </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jacks</td>
-                                            <td>#5, 1st Floor 6th main Bangalore</td>
-                                            <td>Sandeep</td>
-                                            <td>9738720991</td>
-                                            <td>7411528283</td>
-                                            <td>444566</td>
-                                            <td>560013</td>
-                                            <td>
-                                                <a title="Edit" href="#">
-                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                    </a> &nbsp;
-                                                    <a href="#" title="Delete">
-                                                    <span class="glyphicon glyphicon-remove"></span>
-                                                    </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jacks</td>
-                                            <td>#5, 1st Floor 6th main Bangalore</td>
-                                            <td>Sandeep</td>
-                                            <td>9738720991</td>
-                                            <td>7411528283</td>
-                                            <td>444566</td>
-                                            <td>560013</td>
-                                            <td>
-                                                <a title="Edit" href="#">
-                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                    </a> &nbsp;
-                                                    <a href="#" title="Delete">
-                                                    <span class="glyphicon glyphicon-remove"></span>
-                                                    </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jacks</td>
-                                            <td>#5, 1st Floor 6th main Bangalore</td>
-                                            <td>Sandeep</td>
-                                            <td>9738720991</td>
-                                            <td>7411528283</td>
-                                            <td>444566</td>
-                                            <td>560013</td>
-                                            <td>
-                                                <a title="Edit" href="#">
-                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                    </a> &nbsp;
-                                                    <a href="#" title="Delete">
-                                                    <span class="glyphicon glyphicon-remove"></span>
-                                                    </a>
-                                            </td>
-                                        </tr>
-
-
-
-                                    </tbody>
-                                </table>
+                               </table>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
-
-
     </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
-    <?php include('footer.php'); ?>
+<?php include('footer.php'); ?>

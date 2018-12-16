@@ -1,4 +1,10 @@
-<?php include('header.php'); ?>
+<?php
+    include('header.php');
+    include("connection.php");
+    $vendorId = $_GET['id'];
+    $vendor = mysqli_fetch_array(mysqli_query($conn, "select * from vendors where id = $vendorId"));
+
+    ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -32,7 +38,7 @@
                         if($_GET['status'] === 'success'){
                             ?>
                                      <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                                    <i class="fa fa-check"></i><a> User created successfully!.</a>
+                                    <i class="fa fa-check"></i><a> Vendor updated successfully!.</a>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
@@ -42,7 +48,7 @@
                         if($_GET['status'] === 'error'){
                             ?>
                            <div class="alert  alert-warning alert-dismissible fade show" role="alert">
-                                    <i class="fa fa-warning"></i><a> Error creating user.!.</a>
+                                    <i class="fa fa-warning"></i><a> Error creating vendor.!.</a>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
@@ -51,11 +57,11 @@
                         }
                     }
                     ?>
-                        <form class="card" method="post" action="actions/create-vendor.php">
-
-                            <div class="card-header"><strong>Vendor Create</strong>
+                        <form class="card" method="post" action="actions/update-vendor.php">
+                    <input type="hidden" name="vendorId" value="<?php echo $vendorId ;?>">
+                            <div class="card-header"><strong>Update Vendor</strong>
                             <small></small>
-                            
+
                             <a href="vendordetails.php" class="btn btn-secondary pull-right">
                                     <i class="fa fa-chevron-left"></i> Vendors
                                 </a>
@@ -63,17 +69,17 @@
                             <div class="card-body card-block">
                                 <div class="form-group">
                                     <label for="vname" class="form-control-label">Vendor Name</label>
-                                    <input type="text" id="vname" name="name" placeholder="Enter vendor name" class="form-control" required>
+                                    <input type="text" id="vname" value="<?php echo $vendor['name']; ?>" name="name" placeholder="Enter vendor name" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="gst" class=" form-control-label">GST No.</label>
-                                    <input type="text" id="gst" name="gst" placeholder="Enter GST No." class="form-control" required>
+                                    <input type="text" id="gst" name="gst" placeholder="Enter GST No." value="<?php echo $vendor['gst']; ?>" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone" class=" form-control-label">PAN No.</label>
-                                    <input type="text" id="pan" name="pancard" placeholder="Enter PAN number" class="form-control" required>
+                                    <input type="text" id="pan" name="pancard" placeholder="Enter PAN number" value="<?php echo $vendor['pan']; ?>" class="form-control" required>
                                 </div>
-                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>
+                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Update</button>
                             </div>
                             </div>
                         </form>

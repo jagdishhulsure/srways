@@ -1,4 +1,8 @@
-<?php include('header.php'); ?>
+<?php
+    include('header.php');
+    include('connection.php');
+    $sql=mysqli_query($conn, "select * from  lrentrydetails");
+?>
 
 
         <div class="breadcrumbs">
@@ -34,12 +38,15 @@
                             <div class="card-body card-block">
                             <div class="form-group">
                                 <label for="lrnumber" class=" form-control-label">Select LR Number</label>
-                                <select name="lrnumber" placeholder="Choose a vehicle type..." class="form-control" tabindex="1">
-                                    <option value=""></option>
-                                    <option value="IB20190001">LR20190001</option>
-                                    <option value="IB20190002">LR20190002</option>
-                                    <option value="IB20190003">LR20190003</option>
-
+                                <select name="lrnumber" placeholder="Choose a lr number..." class="form-control pod-entry" tabindex="1">
+                                <option value="">Select LR Number</option>
+                                <?php
+                                    while($row = mysqli_fetch_array($sql)){
+                                        ?>
+                                    <option value="<?php echo $row['lr_number']; ?>"><?php echo $row['lr_number'] ?></option>
+                                <?php
+                                    }
+                                ?>
                                 </select>
                                 </div>
                                 <div class="form-group">
@@ -81,3 +88,4 @@
             <!-- Right Panel -->
 </div>
 <?php include('footer.php'); ?>
+<script src="custom-js/challan.js"></script>

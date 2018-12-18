@@ -17,6 +17,7 @@
     <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
     <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
+    <script src="vendors/select2/select2.min.js"></script>
 
     <script src="custom-js/custom.js"></script>
 </body>

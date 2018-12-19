@@ -29,15 +29,13 @@
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
 
-                            <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                                    <span class="badge badge-pill badge-success">Edit</span><a href="indentbookingdetails.php">Indent booking details</a>
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
                         <div class="card">
 
-                            <div class="card-header"><strong>Indent Booking</strong><small></small></div>
+                            <div class="card-header">
+                            <strong>Indent Booking</strong>
+                            <a href="indentbookingdetails.php" class="btn btn-secondary pull-right"><i class="fa fa-chevron-left"></i> Indents List </a>
+
+                            </div>
                             <div class="card-body card-block">
                               <form action="indentbookingInsert.php" method="post" name="form1">
                                 <div class="form-group">

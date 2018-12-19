@@ -30,6 +30,8 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">LR Entry booking details</strong>
+                                <a href="challan-entry.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i> New Challan Entry </a>
+
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">

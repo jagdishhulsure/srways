@@ -1,6 +1,36 @@
-<?php include('header.php'); ?>
+<?php 
+include('header.php'); 
+include_once("connection.php");
+
+if(isset($_POST['submit'])) {
+   // $ib_number = $_POST['ib_number'];
+    $vregnumber = $_POST['vregnumber'];
+    $vregdate = $_POST['vregdate'];
+    $permitno = $_POST['permitno'];
+    $permitupto = $_POST['permitupto'];
+    $insurance = $_POST['insurance'];
+    $insuranceupto = $_POST['insuranceupto'];
+    $fc = $_POST['fc'];
+    $fcupto = $_POST['fcupto'];
+    $tax = $_POST['tax'];
+    $taxupto = $_POST['taxupto'];
+    $pucno = $_POST['pucno'];
+    $pucupto = $_POST['pucupto'];
+   
 
 
+        //insert data to database
+        $result = mysqli_query($conn, "INSERT INTO vehiclemaster(vregnumber,vregdate,permitno,permitupto,insurance,insuranceupto,fc,fcupto,tax,taxupto,pucno,pucupto)
+                                                            VALUES('$vregnumber','$vregdate','$permitno','$permitupto','$insurance','$insuranceupto','$fc','$fcupto','$tax','$taxupto','$pucno','$pucupto')");
+
+        //display success message
+        ?>
+        <script type="text/javascript">
+        window.location.href = 'vehicle-master-details.php';
+        </script>
+  <?php
+}
+?>
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -28,67 +58,67 @@
                 <div class="col-lg-2"></div>
                     <div class="col-lg-8">
 
-                            <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                                    <span class="badge badge-pill badge-success">Edit</span><a href="vehicleentrydetails.php">Vehicle Entry details</a>
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                     </button>
-                                </div>
+                            
                     <!--/.col-->
 
                         <div class="card">
-                            <div class="card-header"><strong>Vehicle Entry</strong><small></small></div>
+                            <div class="card-header"><strong>Vehicle Entry</strong><small></small>
+                            <a href="vehicle-master-details.php" class="btn btn-secondary pull-right"><i class="fa fa-chevron-left"></i> Vehicle Master Details </a>
+                            </div>
                             <div class="card-body card-block">
+                            <form action="" method="post" name="form1">
+
                                 <div class="form-group">
-                                    <label for="vehiclenumber" class=" form-control-label">Vehicle Registration Number</label>
-                                    <input type="text" id="vehiclenumber" placeholder="Vehicle Registration Number" class="form-control">
+                                    <label for="vregnumber" class=" form-control-label">Vehicle Registration Number</label>
+                                    <input type="text" id="vregnumber" name="vregnumber" placeholder="Vehicle Registration Number" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="vrno" class=" form-control-label">Vehicle Registration Date</label>
-                                    <input type="date" id="vrno" placeholder="Registration Date" class="form-control">
+                                    <label for="vregdate" class=" form-control-label">Vehicle Registration Date</label>
+                                    <input type="date" id="vregdate" name="vregdate" placeholder="Registration Date" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="npnumber" class=" form-control-label">Permit Number</label>
-                                    <input type="text" id=" " placeholder="Enter your N/P number" class="form-control">
+                                    <label for="permitno" class=" form-control-label">Permit Number</label>
+                                    <input type="text" id="permitno" name="permitno" placeholder="Enter your N/P number" class="form-control">
                                 </div>
                                         <div class="form-group">
                                             <label for="upto" class=" form-control-label">Up To</label>
-                                            <input type="text" id="upto" placeholder="UP To" class="form-control">
+                                            <input type="text" id="permitupto" name="permitupto" placeholder="UP To" class="form-control">
                                         </div>
                                     <div class="form-group">
-                                        <label for="fc" class=" form-control-label">Insurance Number</label>
-                                        <input type="text" id="fc" placeholder="FC" class="form-control">
+                                        <label for="insurance" class=" form-control-label">Insurance Number</label>
+                                        <input type="text" id="insurance"  name="insurance" placeholder="FC" class="form-control">
                                     </div>
                                     <div class="form-group">
                                             <label for="upto" class=" form-control-label">Up To</label>
-                                            <input type="text" id="upto" placeholder="UP To" class="form-control">
+                                            <input type="text" id="insuranceupto" name="insuranceupto" placeholder="UP To" class="form-control">
                                         </div>
                                         <div class="form-group">
                                         <label for="fc" class=" form-control-label">Fitness Certificate</label>
-                                        <input type="text" id="fc" placeholder="FC" class="form-control">
+                                        <input type="text" id="fc" name="fc" placeholder="FC" class="form-control">
                                     </div>
                                     <div class="form-group">
                                             <label for="upto" class=" form-control-label">Up To</label>
-                                            <input type="text" id="upto" placeholder="UP To" class="form-control">
+                                            <input type="text" id="fcupto" name="fcupto" placeholder="UP To" class="form-control">
                                         </div>
                                         <div class="form-group">
                                         <label for="tax" class=" form-control-label">Tax Number</label>
-                                        <input type="text" id="tax" placeholder="Tax No." class="form-control">
+                                        <input type="text" id="tax" name="tax" placeholder="Tax No." class="form-control">
                                     </div>
                                     <div class="form-group">
                                             <label for="upto" class=" form-control-label">Up To</label>
-                                            <input type="text" id="upto" placeholder="UP To" class="form-control">
+                                            <input type="text" id="taxupto" name="taxupto" placeholder="UP To" class="form-control">
                                         </div>
 
                                 <div class="form-group">
                                     <label for="insurance" class=" form-control-label">PUC Number</label>
-                                    <input type="text" id="insurance" placeholder="Insurance" class="form-control">
+                                    <input type="text" id="pucno" name="pucno" placeholder="PUC Number" class="form-control">
                                 </div>
                                 <div class="form-group">
                                             <label for="upto" class=" form-control-label">Up To</label>
-                                            <input type="text" id="upto" placeholder="UP To" class="form-control">
+                                            <input type="text" id="pucupto" name="pucupto" placeholder="UP To" class="form-control">
                                         </div>
-                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>
+                                <button type="submit" name="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>
+                            </form>
                             </div>
                             </div>
                         </div>

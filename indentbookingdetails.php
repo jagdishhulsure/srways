@@ -30,6 +30,8 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Indent booking details</strong>
+                                <a href="indent-booking.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i> Book Indent </a>
+
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">

@@ -28,11 +28,8 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custome.css">
-
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-
-
+    <link href="vendors/select2/select2.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -59,8 +56,8 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="userdetails.php">Manage Users</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="user-rights.php">User Rights</a></li>
-                            <li><i class="fa fa-bars"></i><a href="customer-master.php">Customer Master</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="vendor-master.php">Vendor Master</a></li>
+                            <li><i class="fa fa-bars"></i><a href="customerdetails.php">Customer Master</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="vendordetails.php">Vendor Master</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="activity.php">ACT</a></li>
                             <li><i class="fa fa-exclamation-triangle"></i><a href="branch.php">Branch</a></li>
                             <li><i class="fa fa-spinner"></i><a href="financial-year.php">FY</a></li>
@@ -69,9 +66,9 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i> OPERATIONS</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="indent-booking.php">Indent Bookinng</a></li>
-                            <li><i class="fa fa-bars"></i><a href="lr-entry.php">LR Entry</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="challan-entry.php">Challan Entry</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="indentbookingdetails.php">Indent Bookinng</a></li>
+                            <li><i class="fa fa-bars"></i><a href="lrentrydetails.php">LR Entry</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="challanentrydetails.php">Challan Entry</a></li>
                             <li><i class="fa fa-share-square-o"></i><a href="pod-entry.php">POD Entry</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="status.php">Status</a></li>
                         </ul>

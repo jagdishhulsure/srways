@@ -32,7 +32,7 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
             <?php
-            if($_GET['status']){
+            if(isset($_GET['status'])){
                 if($_GET['status'] === 'success'){
                     ?>
                              <div class="alert  alert-success alert-dismissible fade show" role="alert">

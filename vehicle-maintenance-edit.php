@@ -1,24 +1,61 @@
-<?php 
-include('header.php'); 
+<?php
+session_start();
+include_once("header.php");
 include_once("connection.php");
-
-if(isset($_POST['submit'])) {
-   // $ib_number = $_POST['ib_number'];
-    $vehiclenumber = $_POST['vehiclenumber'];
-    $vehicletype = $_POST['vehicletype'];
-    $remarks = $_POST['remarks'];
-    
+$v_id = "";
+	$vehiclenumber ="";
+	$vehicletype = "";
+    $remarks = "";	
    
-  //insert data to database
-        $result = mysqli_query($conn, "INSERT INTO vehiclemaintenance(vehiclenumber,vehicletype,remarks)
-                                                            VALUES('$vehiclenumber','$vehicletype','$remarks')");
-
-        //display success message
+if(isset($_POST['update']))
+{	
+	$v_id = $_POST['v_id'];
+	
+	$vehiclenumber = $_POST['vehiclenumber'];
+	$vehicletype = $_POST['vehicletype'];
+    $remarks = $_POST['remarks'];	
+   
+	
+	// checking empty fields
+	if(empty($vehiclenumber) || empty($vehicletype)) {
+				
+		if(empty($vehiclenumber)) {
+			echo "<font color='red'>Name field is empty.</font><br/>";
+		}
+		
+		if(empty($vehicletype)) {
+			echo "<font color='red'>Quantity field is empty.</font><br/>";
+		}
+		
+		
+	} else {	
+		//updating the table
+		$result = mysqli_query($conn, "UPDATE vehiclemaintenance SET vehiclenumber='$vehiclenumber', vehicletype='$vehicletype', remarks='$remarks' WHERE v_id='$v_id'");
+		
+		//redirectig to the display page. In our case, it is view.php
+        //header("Location: pod-entry-details.php");
         ?>
-        <script type="text/javascript">
-        window.location.href = 'vehicle-master-details.php';
-        </script>
-  <?php
+<script type="text/javascript">
+window.location.href = 'vehicle-maintenance-details.php';
+</script>
+<?php
+	}
+}
+
+//getting id from url
+//$ib_number = "";
+
+$v_id = isset($_GET['v_id']) ? $_GET['v_id'] : '';
+
+//selecting data associated with this particular id
+$result = mysqli_query($conn, "SELECT * FROM vehiclemaintenance WHERE v_id='$v_id'");
+
+while ($row = mysqli_fetch_array($result))
+{
+	$vehiclenumber = $row['vehiclenumber'];
+	$vehicletype = $row['vehicletype'];
+    $remarks = $row['remarks'];	
+    	
 }
 ?>
         <div class="breadcrumbs">
@@ -83,16 +120,15 @@ if(isset($_POST['submit'])) {
                                 </div>
                                 <div class="form-group">
                                  <label for="remarks" class=" form-control-label">Remarks</label>
-                               <textarea class="form-control" name="remarks"></textarea>
+                               <textarea class="form-control" name="remarks"><?php echo $remarks;?></textarea>
                                 </div>
-                                <button type="submit" name="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>
+                                <input type="hidden" name="v_id" value=<?php echo  isset($_GET['v_id']) ? $_GET['v_id'] : '';?>>
+
+                                <button type="submit" name="update" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>
                             </form>
                             </div>
                             </div>
                         </div>
-
-
-
 
                         </div>
                     </div><!-- .animated -->

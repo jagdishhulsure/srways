@@ -55,7 +55,7 @@
 
                             <div class="card-header"><strong>Vendor Create</strong>
                             <small></small>
-                            
+
                             <a href="vendordetails.php" class="btn btn-secondary pull-right">
                                     <i class="fa fa-chevron-left"></i> Vendors
                                 </a>
@@ -84,3 +84,11 @@
             <!-- Right Panel -->
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.activity').addClass('show');
+      $('.activitySubmenu').addClass('show')
+       $('.vendors').addClass('active');
+    })(jQuery);
+</script>

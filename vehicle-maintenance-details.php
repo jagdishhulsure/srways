@@ -1,8 +1,8 @@
 <?php
 session_start();
- include('header.php'); 
- include('connection.php'); 
-$results = mysqli_query($conn, "SELECT * FROM vehiclemaintenance"); 
+ include('header.php');
+ include('connection.php');
+$results = mysqli_query($conn, "SELECT * FROM vehiclemaintenance");
 
 ?>
 
@@ -52,10 +52,10 @@ $results = mysqli_query($conn, "SELECT * FROM vehiclemaintenance");
                                     <?php while ($row = mysqli_fetch_array($results)) { ?>
                                         <tr>
                                         <td><?php echo $row['vehiclenumber']; ?></td>
-                                    
+
                                         <td><?php echo $row['vehicletype']; ?></td>
                                         <td><?php echo $row['remarks']; ?></td>
-                                        
+
                                             <td>
                                             <a title="Edit" href="vehicle-maintenance-edit.php?v_id=<?php echo $row['v_id']; ?>">
                                             <i class="fa fa-edit"></i>
@@ -79,3 +79,11 @@ $results = mysqli_query($conn, "SELECT * FROM vehiclemaintenance");
         </div><!-- .content -->
 
 <?php include('footer.php'); ?>
+<script>
+    (function($) {
+      "use strict";
+      $('.fleet').addClass('show');
+      $('.fleetSubMenu').addClass('show')
+       $('.vehicleMaintenance').addClass('active');
+    })(jQuery);
+</script>

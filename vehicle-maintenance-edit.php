@@ -5,33 +5,33 @@ include_once("connection.php");
 $v_id = "";
 	$vehiclenumber ="";
 	$vehicletype = "";
-    $remarks = "";	
-   
+    $remarks = "";
+
 if(isset($_POST['update']))
-{	
+{
 	$v_id = $_POST['v_id'];
-	
+
 	$vehiclenumber = $_POST['vehiclenumber'];
 	$vehicletype = $_POST['vehicletype'];
-    $remarks = $_POST['remarks'];	
-   
-	
+    $remarks = $_POST['remarks'];
+
+
 	// checking empty fields
 	if(empty($vehiclenumber) || empty($vehicletype)) {
-				
+
 		if(empty($vehiclenumber)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
-		
+
 		if(empty($vehicletype)) {
 			echo "<font color='red'>Quantity field is empty.</font><br/>";
 		}
-		
-		
-	} else {	
+
+
+	} else {
 		//updating the table
 		$result = mysqli_query($conn, "UPDATE vehiclemaintenance SET vehiclenumber='$vehiclenumber', vehicletype='$vehicletype', remarks='$remarks' WHERE v_id='$v_id'");
-		
+
 		//redirectig to the display page. In our case, it is view.php
         //header("Location: pod-entry-details.php");
         ?>
@@ -54,8 +54,8 @@ while ($row = mysqli_fetch_array($result))
 {
 	$vehiclenumber = $row['vehiclenumber'];
 	$vehicletype = $row['vehicletype'];
-    $remarks = $row['remarks'];	
-    	
+    $remarks = $row['remarks'];
+
 }
 ?>
         <div class="breadcrumbs">
@@ -87,7 +87,7 @@ while ($row = mysqli_fetch_array($result))
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
 
-                            
+
                         <div class="card">
 
                             <div class="card-header"><strong>Vehicle Maintenance Booking</strong><small></small>
@@ -140,3 +140,11 @@ while ($row = mysqli_fetch_array($result))
             <!-- Right Panel -->
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.fleet').addClass('show');
+      $('.fleetSubMenu').addClass('show')
+       $('.vehicleMaintenance').addClass('active');
+    })(jQuery);
+</script>

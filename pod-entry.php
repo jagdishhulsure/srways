@@ -89,3 +89,11 @@
 </div>
 <?php include('footer.php'); ?>
 <script src="custom-js/challan.js"></script>
+<script>
+    (function($) {
+      "use strict";
+      $('.operations').addClass('show');
+      $('.operationSubMenu').addClass('show')
+       $('.podEntry').addClass('active');
+    })(jQuery);
+</script>

@@ -1,5 +1,5 @@
-<?php 
-include('header.php'); 
+<?php
+include('header.php');
 include_once("connection.php");
 
 if(isset($_POST['submit'])) {
@@ -16,11 +16,11 @@ if(isset($_POST['submit'])) {
    $advance = $_POST['advance'];
    $balance = $_POST['balance'];
    $balanceinwords = $_POST['balanceinwords'];
-   
+
         //insert data to database
     $result = mysqli_query($conn, "INSERT INTO billing (lrnumber,cname,bfrom,bto,fright,ifextra,totalfare,gst,includegst,advance,balance,balanceinwords)
         VALUES('$lrnumber','$cname','$bfrom','$bto','$fright','$ifextra','$totalfare','$gst','$includegst','$advance','$balance','$balanceinwords')");
-    
+
         //display success message
         ?>
         <script type="text/javascript">
@@ -59,7 +59,7 @@ if(isset($_POST['submit'])) {
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
 
-                           
+
                         <div class="card">
 
                             <div class="card-header"><strong>Billing</strong><small></small>
@@ -138,3 +138,11 @@ if(isset($_POST['submit'])) {
 
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.accounts').addClass('show');
+      $('.accountSubMenu').addClass('show')
+       $('.billing').addClass('active');
+    })(jQuery);
+</script>

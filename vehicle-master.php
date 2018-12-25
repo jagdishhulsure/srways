@@ -1,5 +1,5 @@
-<?php 
-include('header.php'); 
+<?php
+include('header.php');
 include_once("connection.php");
 
 if(isset($_POST['submit'])) {
@@ -16,7 +16,7 @@ if(isset($_POST['submit'])) {
     $taxupto = $_POST['taxupto'];
     $pucno = $_POST['pucno'];
     $pucupto = $_POST['pucupto'];
-   
+
 
 
         //insert data to database
@@ -58,7 +58,7 @@ if(isset($_POST['submit'])) {
                 <div class="col-lg-2"></div>
                     <div class="col-lg-8">
 
-                            
+
                     <!--/.col-->
 
                         <div class="card">
@@ -134,3 +134,11 @@ if(isset($_POST['submit'])) {
 
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.fleet').addClass('show');
+      $('.fleetSubMenu').addClass('show')
+       $('.vehicles').addClass('active');
+    })(jQuery);
+</script>

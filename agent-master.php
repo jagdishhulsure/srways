@@ -45,3 +45,12 @@
             </div>
 <?php include('footer.php'); ?>
 
+
+<script>
+    (function($) {
+      "use strict";
+      $('.fleet').addClass('show');
+      $('.fleetSubMenu').addClass('show')
+       $('.agentMaster').addClass('active');
+    })(jQuery);
+</script>

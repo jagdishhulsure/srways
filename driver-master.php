@@ -1,5 +1,5 @@
-<?php 
-include('header.php'); 
+<?php
+include('header.php');
 include_once("connection.php");
 
 if(isset($_POST['submit'])) {
@@ -12,7 +12,7 @@ if(isset($_POST['submit'])) {
     $idproof = $_POST['idproof'];
     $adharno = $_POST['adharno'];
     $dob = $_POST['dob'];
-   
+
   //insert data to database
         $result = mysqli_query($conn, "INSERT INTO drivermaster(drivername,dlno,addresss,phnumber,alternateno,idproof,adharno,dob)
                                                             VALUES('$drivername','$dlno','$address','$phnumber','$alternateno','$idproof','$adharno','$dob')");
@@ -111,3 +111,11 @@ if(isset($_POST['submit'])) {
 
 
 <?php include('footer.php'); ?>
+<script>
+    (function($) {
+      "use strict";
+      $('.fleet').addClass('show');
+      $('.fleetSubMenu').addClass('show')
+       $('.driver').addClass('active');
+    })(jQuery);
+</script>

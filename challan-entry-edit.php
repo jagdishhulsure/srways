@@ -23,9 +23,9 @@ $hire ="";
 $advance = "";
 $balance = "";
 if(isset($_POST['update']))
-{	
+{
 	$challan_id = $_POST['challan_id'];
-	
+
     $lr_number = $_POST['lr_number'];
     $challannumber = $_POST['challannumber'];
     $vnumber = $_POST['vnumber'];
@@ -45,24 +45,24 @@ if(isset($_POST['update']))
     $hire = $_POST['hire'];
     $advance = $_POST['advance'];
     $balance = $_POST['balance'];
-	
-	
+
+
 	// checking empty fields
 	if(empty($lr_number) || empty($challannumber)) {
-				
+
 		if(empty($lr_number)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
-		
+
 		if(empty($challannumber)) {
 			echo "<font color='red'>Quantity field is empty.</font><br/>";
 		}
-		
-		
-	} else {	
+
+
+	} else {
 		//updating the table
 		$result = mysqli_query($conn, "UPDATE challanentry SET lr_number='$lr_number', challannumber='$challannumber', vnumber='$vnumber', vehicletype='$vehicletype', cfrom='$cfrom', cto='$cto', totalfare='$totalfare', amountpaid='$amountpaid', balanceamt='$balanceamt', noofpackages='$noofpackages', cvalues='$cvalues', drivername='$drivername', docno='$docno', mobileno='$mobileno', vdocument='$vdocument', agentname='$agentname', hire='$hire', advance='$advance', balance='$balance' WHERE challan_id='$challan_id'");
-		
+
 		//redirectig to the display page. In our case, it is view.php
         //header("Location: indentbookingdetails.php");
         ?>
@@ -218,7 +218,7 @@ while ($row = mysqli_fetch_array($result))
                                     <label for="drivername" class=" form-control-label">Driver Name</label>
                                     <input type="text" id="drivername" name="drivername" value="<?php echo $drivername;?>" class="form-control">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="mobileno" class=" form-control-label">Mobile No.</label>
                                     <input type="text" id="mobileno" name="mobileno" value="<?php echo $mobileno;?>" class="form-control">
@@ -251,7 +251,7 @@ while ($row = mysqli_fetch_array($result))
                                 </div>
                                 <input type="hidden" name="challan_id" value=<?php echo  isset($_GET['challan_id']) ? $_GET['challan_id'] : '';?>>
                                 <button type="submit" name="update" class="btn btn-success btn-flat m-b-30 m-t-30">Update</button>
-                            </form>                           
+                            </form>
                              </div>
                             </div>
                         </div>
@@ -267,3 +267,11 @@ while ($row = mysqli_fetch_array($result))
 
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.operations').addClass('show');
+      $('.operationSubMenu').addClass('show')
+       $('.challanEntry').addClass('active');
+    })(jQuery);
+</script>

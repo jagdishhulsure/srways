@@ -1,8 +1,8 @@
 <?php
 session_start();
- include('header.php'); 
- include('connection.php'); 
-$results = mysqli_query($conn, "SELECT * FROM podentry"); 
+ include('header.php');
+ include('connection.php');
+$results = mysqli_query($conn, "SELECT * FROM podentry");
 
 ?>
 
@@ -56,14 +56,14 @@ $results = mysqli_query($conn, "SELECT * FROM podentry");
                                     <?php while ($row = mysqli_fetch_array($results)) { ?>
                                         <tr>
                                         <td><?php echo $row['lr_number']; ?></td>
-                                    
+
                                         <td><?php echo $row['ibdate']; ?></td>
                                         <td><?php echo $row['unloading']; ?></td>
                                         <td><?php echo $row['unloadingcharges']; ?></td>
                                         <td><?php echo $row['damages']; ?></td>
                                         <td><?php echo $row['shortage']; ?></td>
                                         <td><?php echo $row['remarks']; ?></td>
-                                       
+
                                             <td>
                                             <a title="Edit" href="pod-entry-edit.php?pod_id=<?php echo $row['pod_id']; ?>">
                                             <i class="fa fa-edit"></i>
@@ -87,3 +87,11 @@ $results = mysqli_query($conn, "SELECT * FROM podentry");
         </div><!-- .content -->
 
 <?php include('footer.php'); ?>
+<script>
+    (function($) {
+      "use strict";
+      $('.operations').addClass('show');
+      $('.operationSubMenu').addClass('show')
+       $('.podEntry').addClass('active');
+    })(jQuery);
+</script>

@@ -90,3 +90,12 @@
             <!-- Right Panel -->
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.activity').addClass('show');
+      $('.activitySubmenu').addClass('show')
+       $('.vendors').addClass('active');
+    })(jQuery);
+</script>
+

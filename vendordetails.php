@@ -42,7 +42,7 @@
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    
+
                                 </table>
                             </div>
                         </div>
@@ -54,3 +54,11 @@
         </div><!-- .content -->
 
 <?php include('footer.php'); ?>
+<script>
+    (function($) {
+      "use strict";
+      $('.activity').addClass('show');
+      $('.activitySubmenu').addClass('show')
+       $('.vendors').addClass('active');
+    })(jQuery);
+</script>

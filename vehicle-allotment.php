@@ -77,10 +77,6 @@
                             </div>
                             </div>
                         </div>
-
-
-
-
                         </div>
                     </div><!-- .animated -->
                 </div><!-- .content -->
@@ -89,3 +85,11 @@
 
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.fleet').addClass('show');
+      $('.fleetSubMenu').addClass('show')
+       $('.vehicleAllotment').addClass('active');
+    })(jQuery);
+</script>

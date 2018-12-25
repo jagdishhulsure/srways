@@ -56,3 +56,12 @@
         </div><!-- .content -->
 
 <?php include('footer.php'); ?>
+
+<script>
+    (function($) {
+      "use strict";
+      $('.activity').addClass('show');
+      $('.activitySubmenu').addClass('show')
+       $('.users').addClass('active');
+    })(jQuery);
+</script>

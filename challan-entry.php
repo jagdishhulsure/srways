@@ -157,3 +157,11 @@
 <?php include('footer.php'); ?>
 
 <script src="custom-js/challan.js"></script>
+<script>
+    (function($) {
+      "use strict";
+      $('.operations').addClass('show');
+      $('.operationSubMenu').addClass('show')
+       $('.challanEntry').addClass('active');
+    })(jQuery);
+</script>

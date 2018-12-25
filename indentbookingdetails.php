@@ -133,3 +133,12 @@
         </div><!-- .content -->
 
 <?php include('footer.php'); ?>
+
+<script>
+    (function($) {
+      "use strict";
+      $('.operations').addClass('show');
+      $('.operationSubMenu').addClass('show')
+       $('.indents').addClass('active');
+    })(jQuery);
+</script>

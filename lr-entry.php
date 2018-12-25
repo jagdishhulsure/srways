@@ -129,3 +129,12 @@
         </div>
 <?php include('footer.php'); ?>
 <script src="custom-js/lr-entry.js"></script>
+
+<script>
+    (function($) {
+      "use strict";
+      $('.operations').addClass('show');
+      $('.operationSubMenu').addClass('show')
+       $('.lrEntry').addClass('active');
+    })(jQuery);
+</script>

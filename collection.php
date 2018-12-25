@@ -90,3 +90,11 @@
 
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.accounts').addClass('show');
+      $('.accountSubMenu').addClass('show')
+       $('.collection').addClass('active');
+    })(jQuery);
+</script>

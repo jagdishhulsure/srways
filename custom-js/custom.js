@@ -26,12 +26,46 @@ jQuery(document).ready(function($) {
                 targets: 6,
                 orderable: false,
                 render: function(data, type, row, meta) {
-                    return '<a href="edituser.php?id=' + row["uid"] + '">Edit</a>';
+                    return '<a href="edituser.php?id=' + row["uid"] + '"> <i class="fa fa-edit"></i></a>';
                 }
             }
         ]
     });
 
+    // Employee Data
+
+    var usersList = $("#usersList").DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "./actions/employees.php",
+            type: "post",
+            error: function() {
+                $(".users-error").html("");
+                $("#users").append(
+                    '<tbody class="users-error"><tr><th colspan="3">No data found in the server</th></tr></tbody>'
+                );
+                $("#users_processing").css("display", "none");
+            }
+        },
+        aoColumns: [
+            { data: "ename" },
+            { data: "phone"},
+            { data: "email" },
+            { data: "address" },
+            { data: "city"},
+            { data: "postcode" }
+        ],
+        columnDefs: [
+            {
+                targets: 6,
+                orderable: false,
+                render: function(data, type, row, meta) {
+                    return '<a href="employee-edit.php?id=' + row["uid"] + '"> <i class="fa fa-edit"></i></a>';
+                }
+            }
+        ]
+    });
 
     /** Customers List **/
     var customerList = $("#customerList").DataTable({

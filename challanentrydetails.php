@@ -1,11 +1,17 @@
-<?php include('header.php'); ?>
+<?php
+session_start();
+ include('header.php'); 
+ include('connection.php'); 
+$results = mysqli_query($conn, "SELECT * FROM challanentry"); 
+
+?>
 
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>LR Entry Booking Details</h1>
+                        <h1>Challan Entry Details</h1>
                     </div>
                 </div>
             </div>
@@ -29,17 +35,17 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">LR Entry booking details</strong>
-                                <a href="challan-entry.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i> New Challan Entry </a>
-
+                                <strong class="card-title">Challan Entry Details</strong>
+                                <a href="challan-entry.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i> Create Indent Booking </a>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                        <th>Challen Number</th>
+                                            <th>Challan Id</th>
+                                            <th>C Number</th>
                                             <th>V Number</th>
-                                            <th>C Name</th>
+                                           
                                             <th>From</th>
                                             <th>To</th>
                                             <th>Total Amount</th>
@@ -49,77 +55,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php while ($row = mysqli_fetch_array($results)) { ?>
                                         <tr>
-                                        <td>111</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
-                                            <td><a title="Edit" href="#">
-                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                    </a> &nbsp;
-                                                    <a href="#" title="Delete">
-                                                    <span class="glyphicon glyphicon-remove"></span>
-                                                    </a></td>
-                                        </tr>
-                                        <tr>
-                                        <td>222</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
+                                        <td><?php echo $row['challan_id']; ?></td>
+                                    
+                                        <td><?php echo $row['challannumber']; ?></td>
+                                        <td><?php echo $row['vnumber']; ?></td>
+                                        <td><?php echo $row['cfrom']; ?></td>
+                                        <td><?php echo $row['cto']; ?></td>
+                                        <td><?php echo $row['totalfare']; ?></td>
+                                        <td><?php echo $row['amountpaid']; ?></td>
+                                        <td><?php echo $row['balanceamt']; ?></td>
                                             <td>
-                                                    <a title="Edit" href="#">
-                                                            <span class="glyphicon glyphicon-edit"></span>
-                                                            </a> &nbsp;
-                                                            <a href="#" title="Delete">
-                                                            <span class="glyphicon glyphicon-remove"></span>
-                                                            </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                        <td>333</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
-                                            <td>
-                                            <a title="Edit" href="#">
-                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                    </a> &nbsp;
-                                                    <a href="#" title="Delete">
-                                                    <span class="glyphicon glyphicon-remove"></span>
-                                                    </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                        <td>444</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
-                                            <td>
-                                            <a title="Edit" href="#">
-                                                <span class="glyphicon glyphicon-edit"></span>
+                                            <a title="Edit" href="challan-entry-edit.php?challan_id=<?php echo $row['challan_id']; ?>">
+                                            <i class="fa fa-edit"></i>
                                               </a> &nbsp;
-                                              <a href="#" title="Delete">
-                                                <span class="glyphicon glyphicon-remove"></span>
+                                              <a href="ibdelete.php?challan_id=<?php echo $row['challan_id']; ?>" onClick="return confirm('Are you sure you want to delete?')" title="Delete">
+                                              <i class="fa fa-remove"></i>
                                               </a></td>
                                         </tr>
 
-
+                                    <?php } ?>
 
                                     </tbody>
                                 </table>

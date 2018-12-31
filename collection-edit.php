@@ -1,32 +1,74 @@
-<?php 
-include('header.php'); 
+<?php
+session_start();
+include_once("header.php");
 include_once("connection.php");
-
-if(isset($_POST['submit'])) {
-   // $ib_number = $_POST['ib_number'];
-    $b_id = $_POST['b_id'];
-    $modeofpayment = $_POST['modeofpayment'];
-    $checkno = $_POST['checkno'];
+$col_id = "";
+	$b_id ="";
+	$modeofpayment = "";
+    $checkno = "";	
+    $amount = "";
+    $remarks = "";	
+   
+if(isset($_POST['update']))
+{	
+	$col_id = $_POST['col_id'];
+	
+	$b_id = $_POST['b_id'];
+	$modeofpayment = $_POST['modeofpayment'];
+    $checkno = $_POST['checkno'];	
     $amount = $_POST['amount'];
     $remarks = $_POST['remarks'];
-  
-        //insert data to database
-        $result = mysqli_query($conn, "INSERT INTO collections(b_id,modeofpayment,checkno,amount,remarks)
-                                                    VALUES('$b_id','$modeofpayment','$checkno','$amount','$remarks')");
-
-        //display success message
+   
+	
+	// checking empty fields
+	if(empty($b_id) || empty($modeofpayment)) {
+				
+		if(empty($b_id)) {
+			echo "<font color='red'>Name field is empty.</font><br/>";
+		}
+		
+		if(empty($modeofpayment)) {
+			echo "<font color='red'>Quantity field is empty.</font><br/>";
+		}
+		
+		
+	} else {	
+		//updating the table
+		$result = mysqli_query($conn, "UPDATE collections SET b_id='$b_id', modeofpayment='$modeofpayment', checkno='$checkno', amount='$amount', remarks='$remarks' WHERE col_id='$col_id'");
+		
+		//redirectig to the display page. In our case, it is view.php
+        //header("Location: pod-entry-details.php");
         ?>
-        <script type="text/javascript">
-        window.location.href = 'collection-details.php';
-        </script>
-  <?php
+<script type="text/javascript">
+window.location.href = 'collection-details.php';
+</script>
+<?php
+	}
+}
+
+//getting id from url
+//$ib_number = "";
+
+$col_id = isset($_GET['col_id']) ? $_GET['col_id'] : '';
+
+//selecting data associated with this particular id
+$result = mysqli_query($conn, "SELECT * FROM collections WHERE col_id='$col_id'");
+
+while ($row = mysqli_fetch_array($result))
+{
+	$b_id = $row['b_id'];
+	$modeofpayment = $row['modeofpayment'];
+    $checkno = $row['checkno'];	
+    $amount = $row['amount'];
+    $remarks = $row['remarks'];
+    	
 }
 ?>
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Collection</h1>
+                        <h1>Collections</h1>
                     </div>
                 </div>
             </div>
@@ -51,12 +93,15 @@ if(isset($_POST['submit'])) {
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
 
-                    
+                            
                         <div class="card">
-                        <div class="card-header"><strong>Collection</strong><small></small>
-                            <a href="collection-details.php" class="btn btn-secondary btn-sm pull-right"><i class="fa fa-chevron-left"></i> Collection List</a>
-                        </div>
-                            <form name="form1" action="" method="POST">
+
+                            <div class="card-header"><strong>Collections</strong><small></small>
+                            <a href="collection-details.php" class="btn btn-secondary pull-right"><i class="fa fa-chevron-left"></i> Collection Details </a>
+
+                            </div>
+                            <div class="card-body card-block">
+                            <form name="form1" action="collection-edit.php" method="POST">
                             
                             <div class="card-body card-block">
                             <div class="form-group">
@@ -81,18 +126,19 @@ if(isset($_POST['submit'])) {
 
                                 <div class="form-group">
                                     <label for="checkno" class=" form-control-label">Check Number</label>
-                                    <input type="text" id="checkno" name="checkno" placeholder="Check Number" class="form-control">
+                                    <input type="text" id="checkno" value="<?php echo $checkno;?>" name="checkno" placeholder="Check Number" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="amount" class=" form-control-label">Amout</label>
-                                    <input type="text" name="amount" id="amount" placeholder="Amount" class="form-control">
+                                    <input type="text" name="amount" value="<?php echo $amount;?>" id="amount" placeholder="Amount" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="remarks" class=" form-control-label">Remarks</label>
-                                    <textarea class="form-control" name="remarks"></textarea>
+                                    <textarea class="form-control" name="remarks"> <?php echo $remarks;?></textarea>
                                 </div>
+                                <input type="hidden" name="col_id" value=<?php echo  isset($_GET['col_id']) ? $_GET['col_id'] : '';?>>
 
-                                <button type="submit" name="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>
+                                <button type="submit" name="update" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>
                                 </form>
                             </div>
                             </div>
@@ -106,7 +152,5 @@ if(isset($_POST['submit'])) {
                 </div><!-- .content -->
             </div><!-- /#right-panel -->
             <!-- Right Panel -->
-
-
 <?php include('footer.php'); ?>
 

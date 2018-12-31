@@ -55,6 +55,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i> ACTIVITY</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="userdetails.php">Manage Users</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="employeedetails.php">Manage Employee</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="user-rights.php">User Rights</a></li>
                             <li><i class="fa fa-bars"></i><a href="customerdetails.php">Customer Master</a></li>
                             <li><i class="fa fa-share-square-o"></i><a href="vendordetails.php">Vendor Master</a></li>

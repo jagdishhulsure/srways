@@ -44,7 +44,7 @@ if(isset($_POST['update']))
 	} else {	
 		//updating the table
 		$result = mysqli_query($conn, "UPDATE lrentrydetails SET ib_number='$ib_number', lrvnumber='$lrvnumber', lrcname='$lrcname', lrfrom='$lrfrom',
-                                                            lrto='$lrto', lrvehicletype='$lrvehicletype', lrbtotalfare='$lrtotalfare',
+                                                            lrto='$lrto', lrvehicletype='$lrvehicletype', lrtotalfare='$lrtotalfare',
                                                             lramountpaid='$lramountpaid', lrbalance='$lrbalance', lrnoofpackages='$lrnoofpackages',
                                                             lrvalue='$lrvalue', lrbilling='$lrbilling' WHERE lr_number='$lr_number'");
 		//redirectig to the display page. In our case, it is view.php
@@ -184,7 +184,7 @@ while ($row = mysqli_fetch_array($result))
                                     <input type="text" id="billing" name="lrbilling" value="<?php echo $lrbilling;?>" class="form-control">
                                 </div>
                                 <input type="hidden" name="lr_number" value=<?php echo  isset($_GET['lr_number']) ? $_GET['lr_number'] : '';?>>
-                                <button type="Submit" name="update" class="btn btn-success btn-flat m-b-30 m-t-30">Update</button>
+                                <button type="submit" name="update" class="btn btn-success btn-flat m-b-30 m-t-30">Update</button>
                             </form>
                             </div>
                             </div>

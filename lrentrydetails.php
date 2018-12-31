@@ -1,11 +1,17 @@
-<?php include('header.php'); ?>
+<?php
+session_start();
+ include('header.php'); 
+ include('connection.php'); 
+$results = mysqli_query($conn, "SELECT * FROM lrentrydetails"); 
+
+?>
 
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>LR Entry Booking Details</h1>
+                        <h1>LR Entry Details</h1>
                     </div>
                 </div>
             </div>
@@ -29,9 +35,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">LR Entry booking details</strong>
-                                <a href="lr-entry.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i> Create LR </a>
-
+                                <strong class="card-title">LR Entry Details</strong>
+                                <a href="lr-entry.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i>Create LR Entry</a>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -42,84 +47,37 @@
                                             <th>C Name</th>
                                             <th>From</th>
                                             <th>To</th>
+                                            <th>Vehicle Type</th>
                                             <th>Total Amount</th>
                                             <th>Paid Amount</th>
                                             <th>Balance Amount</th>
+                                            
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php while ($row = mysqli_fetch_array($results)) { ?>
                                         <tr>
-                                        <td>IB20190001</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
-                                            <td><a title="Edit" href="#">
-                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                    </a> &nbsp;
-                                                    <a href="#" title="Delete">
-                                                    <span class="glyphicon glyphicon-remove"></span>
-                                                    </a></td>
-                                        </tr>
-                                        <tr>
-                                        <td>IB20190002</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
+                                        <td><?php echo $row['ib_number']; ?></td>
+                                        <td><?php echo $row['lrvnumber']; ?></td>
+                                        <td><?php echo $row['lrcname']; ?></td>
+                                        <td><?php echo $row['lrfrom']; ?></td>
+                                        <td><?php echo $row['lrto']; ?></td>
+                                        <td><?php echo $row['lrvehicletype']; ?></td>
+                                        <td><?php echo $row['lrtotalfare']; ?></td>
+                                        <td><?php echo $row['lramountpaid']; ?></td>
+                                        <td><?php echo $row['lrbalance']; ?></td>
+                                        
                                             <td>
-                                                    <a title="Edit" href="#">
-                                                            <span class="glyphicon glyphicon-edit"></span>
-                                                            </a> &nbsp;
-                                                            <a href="#" title="Delete">
-                                                            <span class="glyphicon glyphicon-remove"></span>
-                                                            </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                        <td>IB20190003</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
-                                            <td>
-                                            <a title="Edit" href="#">
-                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                    </a> &nbsp;
-                                                    <a href="#" title="Delete">
-                                                    <span class="glyphicon glyphicon-remove"></span>
-                                                    </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                        <td>IB20190004</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
-                                            <td>
-                                            <a title="Edit" href="#">
-                                                <span class="glyphicon glyphicon-edit"></span>
+                                            <a title="Edit" href="lr-entry-edit.php?lr_number=<?php echo $row['lr_number']; ?>">
+                                            <i class="fa fa-edit"></i>
                                               </a> &nbsp;
-                                            <a href="#" title="Delete">
-                                                <span class="glyphicon glyphicon-remove"></span>
+                                              <a href="ibdelete.php?lr_number=<?php echo $row['lr_number']; ?>" onClick="return confirm('Are you sure you want to delete?')" title="Delete">
+                                              <i class="fa fa-remove"></i>
                                               </a></td>
                                         </tr>
 
-
+                                    <?php } ?>
 
                                     </tbody>
                                 </table>
@@ -131,5 +89,5 @@
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
-        <?php include('footer.php'); ?>
 
+<?php include('footer.php'); ?>

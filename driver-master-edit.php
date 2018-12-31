@@ -110,7 +110,7 @@ while ($row = mysqli_fetch_array($result))
                             <form action="" name="form1" method="POST">
                                 <div class="form-group">
                                     <label for="vehiclenumber" class=" form-control-label">Driver Name</label>
-                                    <input type="text" id="drivername" name="drivername"  value="<?php echo $drivername;?>"  placeholder="Driver Name" class="form-control">
+                                    <input type="text" id="drivername" name="drivername" value="<?php echo $drivername;?>"  placeholder="Driver Name" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="vrno" class=" form-control-label">DL Number</label>

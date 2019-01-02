@@ -1,8 +1,8 @@
 <?php
 session_start();
- include('header.php');
- include('connection.php');
-$results = mysqli_query($conn, "SELECT * FROM lrentrydetails");
+ include('header.php'); 
+ include('connection.php'); 
+$results = mysqli_query($conn, "SELECT * FROM vehicleallotment"); 
 
 ?>
 
@@ -11,7 +11,7 @@ $results = mysqli_query($conn, "SELECT * FROM lrentrydetails");
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>LR Entry Details</h1>
+                        <h1>Vehicle Allotment Details</h1>
                     </div>
                 </div>
             </div>
@@ -35,44 +35,30 @@ $results = mysqli_query($conn, "SELECT * FROM lrentrydetails");
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">LR Entry Details</strong>
-                                <a href="lr-entry.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i>Create LR Entry</a>
+                                <strong class="card-title">Vehicle Allotment Details</strong>
+                                <a href="vehicle-allotment.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i>Vehicle Allotment</a>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                        <th>IB Number</th>
-                                            <th>V Number</th>
-                                            <th>C Name</th>
-                                            <th>From</th>
-                                            <th>To</th>
+                                            <th>Vehicle Number</th>
                                             <th>Vehicle Type</th>
-                                            <th>Total Amount</th>
-                                            <th>Paid Amount</th>
-                                            <th>Balance Amount</th>
-
+                                            <th>Driver Name</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php while ($row = mysqli_fetch_array($results)) { ?>
                                         <tr>
-                                        <td><?php echo $row['ib_number']; ?></td>
-                                        <td><?php echo $row['lrvnumber']; ?></td>
-                                        <td><?php echo $row['lrcname']; ?></td>
-                                        <td><?php echo $row['lrfrom']; ?></td>
-                                        <td><?php echo $row['lrto']; ?></td>
-                                        <td><?php echo $row['lrvehicletype']; ?></td>
-                                        <td><?php echo $row['lrtotalfare']; ?></td>
-                                        <td><?php echo $row['lramountpaid']; ?></td>
-                                        <td><?php echo $row['lrbalance']; ?></td>
-
-                                            <td>
-                                            <a title="Edit" href="lr-entry-edit.php?lr_number=<?php echo $row['lr_number']; ?>">
+                                        <td><?php echo $row['v_number']; ?></td>
+                                        <td><?php echo $row['v_type']; ?></td>
+                                        <td><?php echo $row['d_name']; ?></td>
+                                        <td>
+                                            <a title="Edit" href="vehicle-allotment-edit.php?v_a_id=<?php echo $row['v_a_id']; ?>">
                                             <i class="fa fa-edit"></i>
                                               </a> &nbsp;
-                                              <a href="ibdelete.php?lr_number=<?php echo $row['lr_number']; ?>" onClick="return confirm('Are you sure you want to delete?')" title="Delete">
+                                              <a href="ibdelete.php?v_a_id=<?php echo $row['v_a_id']; ?>" onClick="return confirm('Are you sure you want to delete?')" title="Delete">
                                               <i class="fa fa-remove"></i>
                                               </a></td>
                                         </tr>
@@ -91,11 +77,3 @@ $results = mysqli_query($conn, "SELECT * FROM lrentrydetails");
         </div><!-- .content -->
 
 <?php include('footer.php'); ?>
-<script>
-    (function($) {
-      "use strict";
-      $('.operations').addClass('show');
-      $('.operationSubMenu').addClass('show')
-       $('.lrEntry').addClass('active');
-    })(jQuery);
-</script>

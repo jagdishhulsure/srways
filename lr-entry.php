@@ -1,6 +1,38 @@
+<?php 
+include('header.php'); 
+include_once("connection.php");
+
+if(isset($_POST['submit'])) {
+   // $ib_number = $_POST['ib_number'];
+    $ib_number = $_POST['ib_number'];
+    $lrvnumber = $_POST['lrvnumber'];
+    $lrcname = $_POST['lrcname'];
+    $lrfrom = $_POST['lrfrom'];
+    $lrto = $_POST['lrto'];
+    $lrvehicletype = $_POST['lrvehicletype'];
+    $lrtotalfare = $_POST['lrtotalfare'];
+    $lramountpaid = $_POST['lramountpaid'];
+
+    $lrbalance = $_POST['lrbalance'];
+    $lrnoofpackages = $_POST['lrnoofpackages'];
+    $lrvalue = $_POST['lrvalue'];
+    $lrbilling = $_POST['lrbilling'];
+
+
+        //insert data to database
+        $result = mysqli_query($conn, "INSERT INTO lrentrydetails(ib_number,lrvnumber,lrcname,lrfrom,lrto,lrvehicletype,lrtotalfare,lramountpaid,lrbalance,lrnoofpackages,lrvalue,lrbilling)
+                                                            VALUES('$ib_number','$lrvnumber','$lrcname','$lrfrom','$lrto','$lrvehicletype','$lrtotalfare','$lramountpaid','$lrbalance','$lrnoofpackages','$lrvalue','$lrbilling')");
+
+        //display success message
+        ?>
+        <script type="text/javascript">
+        window.location.href = 'lrentrydetails.php';
+        </script>
+  <?php
+}
+?>
 <?php
-    include('header.php');
-    include('connection.php');
+ 
     $sql=mysqli_query($conn, "select * from  indentbooking");
 ?>
 
@@ -40,9 +72,10 @@
 
                             </div>
                             <div class="card-body card-block">
+                            <form name="form1" action="" method="POST">
                             <div class="form-group">
                                 <label for="vehicletype" class=" form-control-label">Select IB Number</label>
-                                <select name="ibnumber" placeholder="Choose a vehicle type..." class="form-control lr-entry" tabindex="1">
+                                <select name="ib_number" placeholder="Choose IB Number..." class="form-control lr-entry" tabindex="1">
                                     <option value="">Select IB Number</option>
 
                                     <?php
@@ -55,12 +88,12 @@
                                 </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="vnumber" class=" form-control-label">Vehicle Number</label>
-                                    <input type="text" id="vnumber" placeholder="Enter vehicle number" class="form-control vehicleNumber">
+                                    <label for="lrvnumber" class=" form-control-label">Vehicle Number</label>
+                                    <input type="text" id="lrvnumber" name="lrvnumber" placeholder="Enter vehicle number" class="form-control vehicleNumber">
                                 </div>
                                 <div class="form-group">
-                                <label for="vehicletype" class=" form-control-label">Vehicle Type</label>
-                                <select name="vehicletype" placeholder="Choose a vehicle type..." class="form-control vehicletype" tabindex="1">
+                                <label for="lrvehicletype" class=" form-control-label">Vehicle Type</label>
+                                <select name="lrvehicletype" placeholder="Choose a vehicle type..." class="form-control vehicletype" tabindex="1">
                                     <option value=""></option>
                                     <option value="17 feet close">17 feet close</option>
                                     <option value="17 feet open">17 feet open</option>
@@ -76,44 +109,45 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="cname" class=" form-control-label">Customer Name</label>
-                                    <input type="text" id="cname" placeholder="Enter customer name" class="form-control ibCname">
+                                    <input type="text" id="cname" name="lrcname" placeholder="Enter customer name" class="form-control ibCname">
                                 </div>
                                 <div class="form-group">
                                     <label for="from" class=" form-control-label">From</label>
-                                    <input type="text" id="from" placeholder="From: Place name" class="form-control ibFrom">
+                                    <input type="text" id="from" name="lrfrom" placeholder="From: Place name" class="form-control ibFrom">
                                 </div>
                                 <div class="form-group">
                                     <label for="to" class=" form-control-label">To</label>
-                                    <input type="text" id="to" placeholder="To: Place name" class="form-control ibTo">
+                                    <input type="text" id="to" name="lrto" placeholder="To: Place name" class="form-control ibTo">
                                 </div>
                                 <div class="form-group">
                                     <label for="totalfare" class=" form-control-label">Total Amout</label>
-                                    <input type="text" id="totalfare" placeholder="Total amount" class="form-control totalAmout">
+                                    <input type="text" id="totalfare" name="lrtotalfare" placeholder="Total amount" class="form-control totalAmout">
                                 </div>
                                 <div class="form-group">
                                     <label for="amountpaid" class=" form-control-label">Paid Amount</label>
-                                    <input type="text" id="amountpaid" placeholder="Amount paid" class="form-control paidAmount">
+                                    <input type="text" id="amountpaid" name="lramountpaid" placeholder="Amount paid" class="form-control paidAmount">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="balance" class=" form-control-label">Balance Amount</label>
-                                    <input type="text" id="balance" placeholder="Balance amount" class="form-control balanceAmount">
+                                    <input type="text" id="balance" name="lrbalance" placeholder="Balance amount" class="form-control balanceAmount">
                                 </div>
 
                                  <div class="form-group">
                                   <label for="noofpackages" class=" form-control-label">Number of Packages</label>
-                                    <input type="text" id="noofpackages" placeholder="Number of Packages" class="form-control numberOfPackages">
+                                    <input type="text" id="noofpackages" name="lrnoofpackages" placeholder="Number of Packages" class="form-control numberOfPackages">
                                 </div>
                                 <div class="form-group">
                                     <label for="values" class=" form-control-label">Values</label>
-                                    <input type="text" id="values" placeholder="Values" class="form-control values">
+                                    <input type="text" id="values" name="lrvalue" placeholder="Values" class="form-control values">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="billing" class=" form-control-label">Billing Branch</label>
-                                    <input type="text" id="billing" placeholder="Billing Branch" class="form-control billingBranch">
+                                    <input type="text" id="billing" name="lrbilling" placeholder="Billing Branch" class="form-control billingBranch">
                                 </div>
-                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>
+                                <button type="submit" name="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>
+                            </form>
                             </div>
                             </div>
                         </div>

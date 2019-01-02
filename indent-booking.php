@@ -1,4 +1,31 @@
-<?php include('header.php'); ?>
+<?php 
+include('header.php'); 
+include_once("connection.php");
+
+if(isset($_POST['Submit'])) {
+   // $ib_number = $_POST['ib_number'];
+    $ibvnumber = $_POST['ibvnumber'];
+    $ibcname = $_POST['ibcname'];
+    $ibfrom = $_POST['ibfrom'];
+    $ibto = $_POST['ibto'];
+    $ibvehicletype = $_POST['ibvehicletype'];
+    $ibtotalfare = $_POST['ibtotalfare'];
+    $ibamountpaid = $_POST['ibamountpaid'];
+    $ibbalance = $_POST['ibbalance'];
+
+
+        //insert data to database
+        $result = mysqli_query($conn, "INSERT INTO indentbooking(ibvnumber,ibcname,ibfrom,ibto,ibvehicletype,ibtotalfare,ibamountpaid,ibbalance)
+                                                            VALUES('$ibvnumber','$ibcname','$ibfrom','$ibto','$ibvehicletype','$ibtotalfare','$ibamountpaid','$ibbalance')");
+
+        //display success message
+        ?>
+        <script type="text/javascript">
+        window.location.href = 'indentbookingdetails.php';
+        </script>
+  <?php
+}
+?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -29,15 +56,14 @@
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
 
+                            
                         <div class="card">
 
-                            <div class="card-header">
-                            <strong>Indent Booking</strong>
-                            <a href="indentbookingdetails.php" class="btn btn-secondary pull-right"><i class="fa fa-chevron-left"></i> Indents List </a>
-
+                            <div class="card-header"><strong>Indent Booking</strong><small></small>
+                            <a href="indentbookingdetails.php" class="btn btn-secondary pull-right"><i class="fa fa-chevron-left"></i> Indent Booking Details </a>
                             </div>
                             <div class="card-body card-block">
-                              <form action="indentbookingInsert.php" method="post" name="form1">
+                              <form action="" method="post" name="form1">
                                 <div class="form-group">
 
                                     <label for="vnumber" class=" form-control-label">Vehicle Number</label>

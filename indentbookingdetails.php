@@ -1,4 +1,10 @@
-<?php include('header.php'); ?>
+<?php
+session_start();
+ include('header.php'); 
+ include('connection.php'); 
+$results = mysqli_query($conn, "SELECT * FROM indentbooking"); 
+
+?>
 
 
         <div class="breadcrumbs">
@@ -30,8 +36,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Indent booking details</strong>
-                                <a href="indent-booking.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i> Book Indent </a>
-
+                                <a href="indent-booking.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i> Create Indent Booking </a>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -42,6 +47,7 @@
                                             <th>C Name</th>
                                             <th>From</th>
                                             <th>To</th>
+                                            <th>Vehicle Type</th>
                                             <th>Total Amount</th>
                                             <th>Paid Amount</th>
                                             <th>Balance Amount</th>
@@ -49,77 +55,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php while ($row = mysqli_fetch_array($results)) { ?>
                                         <tr>
-                                        <td>IB20190001</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
-                                            <td><a title="Edit" href="#">
-                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                    </a> &nbsp;
-                                                    <a href="#" title="Delete">
-                                                    <span class="glyphicon glyphicon-remove"></span>
-                                                    </a></td>
-                                        </tr>
-                                        <tr>
-                                        <td>IB20190001</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
+                                        <td><?php echo $row['ib_number']; ?></td>
+                                    
+                                        <td><?php echo $row['ibvnumber']; ?></td>
+                                        <td><?php echo $row['ibcname']; ?></td>
+                                        <td><?php echo $row['ibfrom']; ?></td>
+                                        <td><?php echo $row['ibto']; ?></td>
+                                        <td><?php echo $row['ibvehicletype']; ?></td>
+                                        <td><?php echo $row['ibtotalfare']; ?></td>
+                                        <td><?php echo $row['ibamountpaid']; ?></td>
+                                        <td><?php echo $row['ibbalance']; ?></td>
                                             <td>
-                                                    <a title="Edit" href="#">
-                                                            <span class="glyphicon glyphicon-edit"></span>
-                                                            </a> &nbsp;
-                                                            <a href="#" title="Delete">
-                                                            <span class="glyphicon glyphicon-remove"></span>
-                                                            </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                        <td>IB20190001</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
-                                            <td>
-                                            <a title="Edit" href="#">
-                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                    </a> &nbsp;
-                                                    <a href="#" title="Delete">
-                                                    <span class="glyphicon glyphicon-remove"></span>
-                                                    </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                        <td>IB20190001</td>
-                                            <td>KA 39,L 6413</td>
-                                            <td>Jagdish</td>
-                                            <td>Bangalore</td>
-                                            <td>Mumbai</td>
-                                            <td>40000</td>
-                                            <td>30000</td>
-                                            <td>10000</td>
-                                            <td>
-                                            <a title="Edit" href="#">
-                                                <span class="glyphicon glyphicon-edit"></span>
+                                            <a title="Edit" href="indent-booking-edit.php?ib_number=<?php echo $row['ib_number']; ?>">
+                                            <i class="fa fa-edit"></i>
                                               </a> &nbsp;
-                                              <a href="#" title="Delete">
-                                                <span class="glyphicon glyphicon-remove"></span>
+                                              <a href="ibdelete.php?ib_number=<?php echo $row['ib_number']; ?>" onClick="return confirm('Are you sure you want to delete?')" title="Delete">
+                                              <i class="fa fa-remove"></i>
                                               </a></td>
                                         </tr>
 
-
+                                    <?php } ?>
 
                                     </tbody>
                                 </table>

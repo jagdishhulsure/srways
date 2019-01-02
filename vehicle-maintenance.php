@@ -16,7 +16,7 @@ if(isset($_POST['submit'])) {
         //display success message
         ?>
         <script type="text/javascript">
-        window.location.href = 'vehicle-master-details.php';
+        window.location.href = 'vehicle-maintenance-details.php';
         </script>
   <?php
 }

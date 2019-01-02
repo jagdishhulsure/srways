@@ -1,6 +1,30 @@
+<?php 
+include('header.php'); 
+include_once("connection.php");
+
+if(isset($_POST['submit'])) {
+   // $ib_number = $_POST['ib_number'];
+    $lr_number = $_POST['lr_number'];
+    $ibdate = $_POST['ibdate'];
+    $unloading = $_POST['unloading'];
+    $unloadingcharges = $_POST['unloadingcharges'];
+    $damages = $_POST['damages'];
+    $shortage = $_POST['shortage'];
+    $remarks = $_POST['remarks'];
+   
+        //insert data to database
+        $result = mysqli_query($conn, "INSERT INTO podentry(lr_number,ibdate,unloading,unloadingcharges,damages,shortage,remarks)
+                                                            VALUES('$lr_number','$ibdate','$unloading','$unloadingcharges','$damages','$shortage','$remarks')");
+
+        //display success message
+        ?>
+        <script type="text/javascript">
+        window.location.href = 'pod-entry-details.php';
+        </script>
+  <?php
+}
+?>
 <?php
-    include('header.php');
-    include('connection.php');
     $sql=mysqli_query($conn, "select * from  lrentrydetails");
 ?>
 
@@ -36,9 +60,10 @@
                         <div class="card">
                             <div class="card-header"><strong>POD Entry</strong><small></small></div>
                             <div class="card-body card-block">
+                            <form action="" name="form1" method="post">
                             <div class="form-group">
-                                <label for="lrnumber" class=" form-control-label">Select LR Number</label>
-                                <select name="lrnumber" placeholder="Choose a lr number..." class="form-control pod-entry" tabindex="1">
+                                <label for="lr_number" class=" form-control-label">Select LR Number</label>
+                                <select name="lr_number" placeholder="Choose a lr number..." class="form-control pod-entry" tabindex="1">
                                 <option value="">Select LR Number</option>
                                 <?php
                                     while($row = mysqli_fetch_array($sql)){
@@ -50,30 +75,31 @@
                                 </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="date" class=" form-control-label">ID Date</label>
-                                    <input type="date" id="vehiclenumber" placeholder="Date" class="form-control">
+                                    <label for="date" class=" form-control-label">IB Date</label>
+                                    <input type="date" id="ibdate" name="ibdate" placeholder="Date" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="unloading" class=" form-control-label">Unloading Date</label>
-                                    <input type="date" id="unloading" placeholder="Unloading Date" class="form-control">
+                                    <input type="date" id="unloading" name="unloading" placeholder="Unloading Date" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="unloadingcharges" class=" form-control-label">Unloading Charges</label>
-                                    <input type="text" id="unloadingcharges" placeholder="Unloading Charges" class="form-control">
+                                    <input type="text" id="unloadingcharges" name="unloadingcharges" placeholder="Unloading Charges" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="damages" class=" form-control-label">Damages</label>
-                                    <input type="text" id="damages" placeholder="Damages" class="form-control">
+                                    <input type="text" id="damages" name="damages" placeholder="Damages" class="form-control">
                                 </div>
                                <div class="form-group">
                                     <label for="shortage" class=" form-control-label">Shortage</label>
-                                    <input type="text" id="shortage" placeholder="Shortage" class="form-control">
+                                    <input type="text" id="shortage" name="shortage" placeholder="Shortage" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="shortage" class=" form-control-label">Remarks</label>
-                                    <textarea name="remarks" id="remarks" class="form-control"></textarea>
+                                    <textarea name="remarks" id="remarks" name="remarks" class="form-control"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>
+                                <button type="submit" name="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Submit</button>
+                            </form>
                             </div>
                             </div>
                         </div>

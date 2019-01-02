@@ -29,7 +29,10 @@ if(isset($_POST['submit'])) {
     <?php
     }
     ?>
+<?php
 
+$sql=mysqli_query($conn, "select * from  lrentrydetails");
+?>
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -71,10 +74,14 @@ if(isset($_POST['submit'])) {
                             <div class="form-group">
                                 <label for="lrnumber" class=" form-control-label">Select LR Number</label>
                                 <select name="lrnumber" placeholder="Choose a LR type..." class="form-control" tabindex="1">
-                                    <option value=""></option>
-                                    <option value="LR20190001">LR20190001</option>
-                                    <option value="IB20190002">LR20190002</option>
-                                    <option value="IB20190003">LR20190003</option>
+                                <option value="">Select LR Number</option>
+                                    <?php
+                                        while($row = mysqli_fetch_array($sql)){
+                                            ?>
+                                        <option value="<?php echo $row['lr_number']; ?>"><?php echo $row['lr_number'] ?></option>
+                                    <?php
+                                        }
+                                    ?>
 
                                 </select>
                                 </div>
@@ -85,7 +92,7 @@ if(isset($_POST['submit'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for="from" class=" form-control-label">From</label>
-                                    <input type="text" id="from" name="bfrom" placeholder="From: Place name" class="form-control">
+                                    <input type="text" id="from" name="bfrom" placeholder="From: Place name" class="form-control ibFrom">
                                 </div>
                                 <div class="form-group">
                                     <label for="to" class=" form-control-label">To</label>

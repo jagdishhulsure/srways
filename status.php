@@ -60,3 +60,11 @@
 </div>
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.operations').addClass('show');
+      $('.operationSubMenu').addClass('show')
+       $('.status').addClass('active');
+    })(jQuery);
+</script>

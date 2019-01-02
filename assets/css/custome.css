@@ -1,7 +1,11 @@
 span.glyphicon.glyphicon-edit {
             color: #28a745;
  }
-          
+
 span.glyphicon.glyphicon-remove {
    color: #dc3545;
+}
+
+.navbar .navbar-nav li.active > a {
+  color: #fff !important;
 }

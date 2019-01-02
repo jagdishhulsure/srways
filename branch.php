@@ -46,3 +46,12 @@
 
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.activity').addClass('show');
+      $('.activitySubmenu').addClass('show')
+       $('.branch').addClass('active');
+    })(jQuery);
+</script>
+

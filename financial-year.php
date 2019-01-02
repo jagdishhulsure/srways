@@ -45,3 +45,13 @@
 
 <?php include('footer.php'); ?>
 
+
+<script>
+    (function($) {
+      "use strict";
+      $('.activity').addClass('show');
+      $('.activitySubmenu').addClass('show')
+       $('.fyYear').addClass('active');
+    })(jQuery);
+</script>
+

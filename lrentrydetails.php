@@ -1,8 +1,8 @@
 <?php
 session_start();
- include('header.php'); 
- include('connection.php'); 
-$results = mysqli_query($conn, "SELECT * FROM lrentrydetails"); 
+ include('header.php');
+ include('connection.php');
+$results = mysqli_query($conn, "SELECT * FROM lrentrydetails");
 
 ?>
 
@@ -51,7 +51,7 @@ $results = mysqli_query($conn, "SELECT * FROM lrentrydetails");
                                             <th>Total Amount</th>
                                             <th>Paid Amount</th>
                                             <th>Balance Amount</th>
-                                            
+
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -67,7 +67,7 @@ $results = mysqli_query($conn, "SELECT * FROM lrentrydetails");
                                         <td><?php echo $row['lrtotalfare']; ?></td>
                                         <td><?php echo $row['lramountpaid']; ?></td>
                                         <td><?php echo $row['lrbalance']; ?></td>
-                                        
+
                                             <td>
                                             <a title="Edit" href="lr-entry-edit.php?lr_number=<?php echo $row['lr_number']; ?>">
                                             <i class="fa fa-edit"></i>
@@ -91,3 +91,11 @@ $results = mysqli_query($conn, "SELECT * FROM lrentrydetails");
         </div><!-- .content -->
 
 <?php include('footer.php'); ?>
+<script>
+    (function($) {
+      "use strict";
+      $('.operations').addClass('show');
+      $('.operationSubMenu').addClass('show')
+       $('.lrEntry').addClass('active');
+    })(jQuery);
+</script>

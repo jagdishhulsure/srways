@@ -89,3 +89,12 @@ $results = mysqli_query($conn, "SELECT * FROM challanentry");
         </div><!-- .content -->
 
 <?php include('footer.php'); ?>
+
+<script>
+    (function($) {
+      "use strict";
+      $('.operations').addClass('show');
+      $('.operationSubMenu').addClass('show')
+       $('.challanEntry').addClass('active');
+    })(jQuery);
+</script>

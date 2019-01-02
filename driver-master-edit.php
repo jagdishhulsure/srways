@@ -12,7 +12,7 @@ $idproof ="";
 $adharno = "";
 $dob = "";
 if(isset($_POST['update']))
-{	
+{
 	$d_id = $_POST['d_id'];
 	$drivername = $_POST['drivername'];
     $dlno = $_POST['dlno'];
@@ -24,20 +24,20 @@ if(isset($_POST['update']))
     $dob = $_POST['dob'];
 	// checking empty fields
 	if(empty($drivername) || empty($dlno)) {
-				
+
 		if(empty($drivername)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
-		
+
 		if(empty($dlno)) {
 			echo "<font color='red'>Quantity field is empty.</font><br/>";
 		}
-		
-		
-	} else {	
+
+
+	} else {
 		//updating the table
 		$result = mysqli_query($conn, "UPDATE drivermaster SET drivername='$drivername', dlno='$dlno', addresss='$address', phnumber='$phnumber', alternateno='$alternateno', idproof='$idproof', adharno='$adharno', dob='$dob'");
-		
+
 		//redirectig to the display page. In our case, it is view.php
         //header("Location: indentbookingdetails.php");
         ?>
@@ -68,7 +68,7 @@ while ($row = mysqli_fetch_array($result))
     $idproof = $row['idproof'];
     $adharno = $row['adharno'];
     $dob = $row['dob'];
-    
+
 }
 ?>
 
@@ -158,3 +158,11 @@ while ($row = mysqli_fetch_array($result))
 
 
 <?php include('footer.php'); ?>
+<script>
+    (function($) {
+      "use strict";
+      $('.fleet').addClass('show');
+      $('.fleetSubMenu').addClass('show')
+       $('.driver').addClass('active');
+    })(jQuery);
+</script>

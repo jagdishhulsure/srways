@@ -5,10 +5,10 @@ include_once("connection.php");
 $v_id = "";
 	$vregnumber ="";
 	$vregdate = "";
-    $permitno = "";	
+    $permitno = "";
     $permitupto ="";
 	$insurance = "";
-    $insuranceupto ="";	
+    $insuranceupto ="";
     $fc ="";
     $fcupto ="";
     $tax ="";
@@ -16,41 +16,41 @@ $v_id = "";
     $pucno ="";
     $pucupto ="";
 if(isset($_POST['update']))
-{	
+{
 	$v_id = $_POST['v_id'];
-	
+
 	$vregnumber = $_POST['vregnumber'];
 	$vregdate = $_POST['vregdate'];
-    $permitno = $_POST['permitno'];	
+    $permitno = $_POST['permitno'];
     $permitupto = $_POST['permitupto'];
 	$insurance = $_POST['insurance'];
-    $insuranceupto = $_POST['insuranceupto'];	
+    $insuranceupto = $_POST['insuranceupto'];
     $fc = $_POST['fc'];
     $fcupto = $_POST['fcupto'];
     $tax = $_POST['tax'];
     $taxupto = $_POST['taxupto'];
     $pucno = $_POST['pucno'];
     $pucupto = $_POST['pucupto'];
-	
-	
+
+
 	// checking empty fields
 	if(empty($vregnumber) || empty($vregdate)) {
-				
+
 		if(empty($vregnumber)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
-		
+
 		if(empty($vregdate)) {
 			echo "<font color='red'>Quantity field is empty.</font><br/>";
 		}
-		
-		
-	} else {	
+
+
+	} else {
 		//updating the table
 		$result = mysqli_query($conn, "UPDATE vehiclemaster SET vregnumber='$vregnumber', vregdate='$vregdate', permitno='$permitno',
                                                                 permitupto='$permitupto', insurance='$insurance', insurance='$insuranceupto',
                                                                 fc='$fc',fcupto='$fcupto',tax='$taxupto',pucno='$pucno',pucupto='$pucupto' WHERE v_id='$v_id'");
-		
+
 		//redirectig to the display page. In our case, it is view.php
         //header("Location: pod-entry-details.php");
         ?>
@@ -73,17 +73,17 @@ while ($row = mysqli_fetch_array($result))
 {
 	$vregnumber = $row['vregnumber'];
 	$vregdate = $row['vregdate'];
-    $permitno = $row['permitno'];	
+    $permitno = $row['permitno'];
     $permitupto = $row['permitupto'];
 	$insurance = $row['insurance'];
-    $insuranceupto = $row['insuranceupto'];	
+    $insuranceupto = $row['insuranceupto'];
     $fc = $row['fc'];
     $fcupto = $row['fcupto'];
     $tax = $row['tax'];
     $taxupto = $row['taxupto'];
     $pucno = $row['pucno'];
     $pucupto = $row['pucupto'];
-	
+
 }
 ?>
         <div class="breadcrumbs">
@@ -113,7 +113,7 @@ while ($row = mysqli_fetch_array($result))
                 <div class="col-lg-2"></div>
                     <div class="col-lg-8">
 
-                            
+
                     <!--/.col-->
 
                         <div class="card">
@@ -190,4 +190,11 @@ while ($row = mysqli_fetch_array($result))
 
 
 <?php include('footer.php'); ?>
-
+<script>
+    (function($) {
+      "use strict";
+      $('.fleet').addClass('show');
+      $('.fleetSubMenu').addClass('show')
+       $('.vehicles').addClass('active');
+    })(jQuery);
+</script>

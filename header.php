@@ -42,74 +42,73 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./">SRWAYS Admin</a>
-                <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand" href="dashboard.php">SRWAYS Admin</a>
+                <a class="navbar-brand hidden" href="dashboard.php"><img src="images/logo2.png" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                    <li class="active">
+                    <li class="dashboard">
                         <a href="dashboard.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i> ACTIVITY</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="userdetails.php">Manage Users</a></li>
-                            <li><i class="fa fa-puzzle-piece"></i><a href="employeedetails.php">Manage Employee</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="user-rights.php">User Rights</a></li>
-                            <li><i class="fa fa-bars"></i><a href="customerdetails.php">Customer Master</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="vendordetails.php">Vendor Master</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="activity.php">ACT</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="branch.php">Branch</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="financial-year.php">FY</a></li>
+                    <li class="menu-item-has-children dropdown activity">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"> <i class="menu-icon fa fa-laptop"></i> ACTIVITY</a>
+                        <ul class="sub-menu children dropdown-menu activitySubmenu">
+                            <li class="users"><i class="fa fa-puzzle-piece"></i><a href="userdetails.php">Manage Users</a></li>
+                            <li class="employees"><i class="fa fa-puzzle-piece"></i><a href="employeedetails.php">Manage Employee</a></li>
+                            <li class="userRights"><i class="fa fa-id-badge"></i><a href="user-rights.php">User Rights</a></li>
+                            <li class="customers"><i class="fa fa-bars"></i><a href="customerdetails.php">Customer Master</a></li>
+                            <li class="vendors"><i class="fa fa-share-square-o"></i><a href="vendordetails.php">Vendor Master</a></li>
+                            <li class="act"><i class="fa fa-id-card-o"></i><a href="activity.php">ACT</a></li>
+                            <li class="branch"><i class="fa fa-exclamation-triangle"></i><a href="branch.php">Branch</a></li>
+                            <li class="fyYear"><i class="fa fa-spinner"></i><a href="financial-year.php">FY</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i> OPERATIONS</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="indentbookingdetails.php">Indent Bookinng</a></li>
-                            <li><i class="fa fa-bars"></i><a href="lrentrydetails.php">LR Entry</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="challanentrydetails.php">Challan Entry</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="pod-entry.php">POD Entry</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="status.php">Status</a></li>
+                    <li class="menu-item-has-children dropdown operations">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"> <i class="menu-icon fa fa-laptop"></i> OPERATIONS</a>
+                        <ul class="sub-menu children dropdown-menu operationSubMenu">
+                            <li class="indents"><i class="fa fa-puzzle-piece"></i><a href="inindentbookingdetailsdentbookingdetails.php">Indent Bookinng</a></li>
+                            <li class="lrEntry"><i class="fa fa-bars"></i><a href="lrentrydetails.php">LR Entry</a></li>
+                            <li class="challanEntry"><i class="fa fa-id-badge"></i><a href="challanentrydetails.php">Challan Entry</a></li>
+                            <li class="podEntry"><i class="fa fa-share-square-o"></i><a href="pod-entry.php">POD Entry</a></li>
+                            <li class="status"><i class="fa fa-id-card-o"></i><a href="status.php">Status</a></li>
                         </ul>
                     </li>
 
-                    <li class="menu-item-has-children dropdown">
+                    <li class="menu-item-has-children dropdown fleet">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i> FLEET</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="vehicle-master.php">Vehicle Master</a></li>
-                            <li><i class="fa fa-bars"></i><a href="driver-master.php">Driver Master</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="vehicle-allotment.php">Vehicle Allotment</a></li>
-
-                            <li><i class="fa fa-share-square-o"></i><a href="vehicle-maintenance.php">Vehicle Maintainance</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="agent-master.php">Agent Master</a></li>
+                        <ul class="sub-menu children dropdown-menu fleetSubMenu">
+                            <li class="vehicles"><i class="fa fa-puzzle-piece"></i><a href="vehicle-master.php">Vehicle Master</a></li>
+                            <li class="driver"><i class="fa fa-bars"></i><a href="driver-master.php">Driver Master</a></li>
+                            <li class="vehicleAllotment"><i class="fa fa-id-badge"></i><a href="vehicle-allotment.php">Vehicle Allotment</a></li>
+                            <li class="vehicleMaintenance"><i class="fa fa-share-square-o"></i><a href="vehicle-maintenance.php">Vehicle Maintainance</a></li>
+                            <li class="agentMaster"><i class="fa fa-id-card-o"></i><a href="agent-master.php">Agent Master</a></li>
 
                         </ul>
                     </li>
 
-                    <li class="menu-item-has-children dropdown">
+                    <li class="menu-item-has-children dropdown accounts">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i> ACCOUNTS</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="billing.php">Billing</a></li>
-                            <li><i class="fa fa-bars"></i><a href="collection.php">Collection</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="outstanding.php">Outstanding</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="ledger.php">Ledger</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="payments.php">Payment</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="account.php">On A/c</a></li>
+                        <ul class="sub-menu children dropdown-menu accountSubMenu">
+                            <li class="billing"><i class="fa fa-puzzle-piece"></i><a href="billing.php">Billing</a></li>
+                            <li class="collection"><i class="fa fa-bars"></i><a href="collection.php">Collection</a></li>
+                            <li class="outstanding"><i class="fa fa-id-badge"></i><a href="outstanding.php">Outstanding</a></li>
+                            <li class="ledger"><i class="fa fa-share-square-o"></i><a href="ledger.php">Ledger</a></li>
+                            <li class="payment"><i class="fa fa-id-card-o"></i><a href="payments.php">Payment</a></li>
+                            <li class="onac"><i class="fa fa-id-card-o"></i><a href="account.php">On A/c</a></li>
 
                         </ul>
                     </li>
-                    <li class="menu-item-has-children dropdown">
+                    <li class="menu-item-has-children dropdown reports">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i> REPORTS</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="movement-report.php">Movement Report</a></li>
-                            <li><i class="fa fa-bars"></i><a href="vehicle-report.php">Vehicle Report</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="driver-report.php">Driver Report</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="customer-report.php">Customer Report</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="maintainance-report.php">Maintainance Report</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="vendor-report.php">Vendor Report</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="expense-report.php">Expense Report</a></li>
+                        <ul class="sub-menu children dropdown-menu reportSubMenu">
+                            <li class="movementReport"><i class="fa fa-puzzle-piece"></i><a href="movement-report.php">Movement Report</a></li>
+                            <li class="vehicleReport"><i class="fa fa-bars"></i><a href="vehicle-report.php">Vehicle Report</a></li>
+                            <li class="driverReport"><i class="fa fa-id-badge"></i><a href="driver-report.php">Driver Report</a></li>
+                            <li class="customerReport"><i class="fa fa-share-square-o"></i><a href="customer-report.php">Customer Report</a></li>
+                            <li class="maintainanceReport"><i class="fa fa-id-card-o"></i><a href="maintainance-report.php">Maintainance Report</a></li>
+                            <li class="vendorReport"><i class="fa fa-id-card-o"></i><a href="vendor-report.php">Vendor Report</a></li>
+                            <li class="expenseReport"><i class="fa fa-id-card-o"></i><a href="expense-report.php">Expense Report</a></li>
                         </ul>
                     </li>
                 </ul>

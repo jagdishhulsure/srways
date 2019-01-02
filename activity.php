@@ -44,4 +44,13 @@
     </div>
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.activity').addClass('show');
+      $('.activitySubmenu').addClass('show')
+       $('.act').addClass('active');
+    })(jQuery);
+</script>
+
 

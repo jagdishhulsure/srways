@@ -5,42 +5,42 @@ include_once("connection.php");
 $pod_id = "";
 	$lr_number ="";
 	$ibdate = "";
-    $unloading = "";	
+    $unloading = "";
     $unloadingcharges ="";
 	$damages = "";
-    $shortage ="";	
+    $shortage ="";
     $remarks ="";
 if(isset($_POST['update']))
-{	
+{
 	$pod_id = $_POST['pod_id'];
-	
+
 	$lr_number = $_POST['lr_number'];
 	$ibdate = $_POST['ibdate'];
-    $unloading = $_POST['unloading'];	
+    $unloading = $_POST['unloading'];
     $unloadingcharges = $_POST['unloadingcharges'];
 	$damages = $_POST['damages'];
-    $shortage = $_POST['shortage'];	
+    $shortage = $_POST['shortage'];
     $remarks = $_POST['remarks'];
-	
-	
+
+
 	// checking empty fields
 	if(empty($lr_number) || empty($ibdate)) {
-				
+
 		if(empty($lr_number)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
-		
+
 		if(empty($ibdate)) {
 			echo "<font color='red'>Quantity field is empty.</font><br/>";
 		}
-		
-		
-	} else {	
+
+
+	} else {
 		//updating the table
 		$result = mysqli_query($conn, "UPDATE podentry SET lr_number='$lr_number', ibdate='$ibdate', unloading='$unloading',
                                                                 unloadingcharges='$unloadingcharges', damages='$damages', shortage='$shortage',
                                                                 remarks='$remarks' WHERE pod_id='$pod_id'");
-		
+
 		//redirectig to the display page. In our case, it is view.php
         //header("Location: pod-entry-details.php");
         ?>
@@ -63,12 +63,12 @@ while ($row = mysqli_fetch_array($result))
 {
 	$lr_number = $row['lr_number'];
 	$ibdate = $row['ibdate'];
-    $unloading = $row['unloading'];	
+    $unloading = $row['unloading'];
     $unloadingcharges = $row['unloadingcharges'];
 	$damages = $row['damages'];
-    $shortage = $row['shortage'];	
+    $shortage = $row['shortage'];
     $remarks = $row['remarks'];
-	
+
 }
 ?>
         <div class="breadcrumbs">
@@ -155,3 +155,12 @@ while ($row = mysqli_fetch_array($result))
 
      </div>
      <?php include('footer.php'); ?>
+
+<script>
+    (function($) {
+      "use strict";
+      $('.operations').addClass('show');
+      $('.operationSubMenu').addClass('show')
+       $('.podEntry').addClass('active');
+    })(jQuery);
+</script>

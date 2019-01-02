@@ -6,14 +6,14 @@ $lr_number = "";
 $ib_number = "";
 	$ibvnumber ="";
 	$ibcname = "";
-    $ibfrom = "";	
+    $ibfrom = "";
     $ibto ="";
 	$ibvehicletype = "";
-    $ibtotalfare ="";	
+    $ibtotalfare ="";
     $ibamountpaid ="";
 	$ibbalance = "";
 if(isset($_POST['update']))
-{	
+{
 	$lr_number = $_POST['lr_number'];
 	$ib_number = $_POST['ib_number'];
 	$lrvnumber = $_POST['lrvnumber'];
@@ -27,21 +27,21 @@ if(isset($_POST['update']))
     $lrnoofpackages = $_POST['lrnoofpackages'];
     $lrvalue = $_POST['lrvalue'];
     $lrbilling = $_POST['lrbilling'];
-	
-	
+
+
 	// checking empty fields
 	if(empty($lrvnumber) || empty($lrcname)) {
-				
+
 		if(empty($lrvnumber)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
-		
+
 		if(empty($lrcname)) {
 			echo "<font color='red'>Quantity field is empty.</font><br/>";
 		}
-		
-		
-	} else {	
+
+
+	} else {
 		//updating the table
 		$result = mysqli_query($conn, "UPDATE lrentrydetails SET ib_number='$ib_number', lrvnumber='$lrvnumber', lrcname='$lrcname', lrfrom='$lrfrom',
                                                             lrto='$lrto', lrvehicletype='$lrvehicletype', lrtotalfare='$lrtotalfare',
@@ -54,7 +54,7 @@ if(isset($_POST['update']))
     window.location.href = 'lrentrydetails.php';
     </script>
     <?php
-	
+
 }
 }
 
@@ -64,7 +64,7 @@ $result = mysqli_query($conn, "SELECT * FROM lrentrydetails WHERE lr_number='$lr
 
 while ($row = mysqli_fetch_array($result))
 {
-    
+
     $ib_number = $row['ib_number'];
     $lrvnumber = $row['lrvnumber'];
     $lrcname = $row['lrcname'];
@@ -200,3 +200,11 @@ while ($row = mysqli_fetch_array($result))
             <!-- Right Panel -->
         </div>
 <?php include('footer.php'); ?>
+<script>
+    (function($) {
+      "use strict";
+      $('.operations').addClass('show');
+      $('.operationSubMenu').addClass('show')
+       $('.lrEntry').addClass('active');
+    })(jQuery);
+</script>

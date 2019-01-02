@@ -1,8 +1,8 @@
 <?php
 session_start();
- include('header.php'); 
- include('connection.php'); 
-$results = mysqli_query($conn, "SELECT * FROM vehiclemaster"); 
+ include('header.php');
+ include('connection.php');
+$results = mysqli_query($conn, "SELECT * FROM vehiclemaster");
 
 ?>
 
@@ -50,7 +50,7 @@ $results = mysqli_query($conn, "SELECT * FROM vehiclemaster");
                                             <th>Upto</th>
                                             <th>Fitness</th>
                                             <th>Upto</th>
-                                           
+
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -58,7 +58,7 @@ $results = mysqli_query($conn, "SELECT * FROM vehiclemaster");
                                     <?php while ($row = mysqli_fetch_array($results)) { ?>
                                         <tr>
                                         <td><?php echo $row['vregnumber']; ?></td>
-                                    
+
                                         <td><?php echo $row['vregdate']; ?></td>
                                         <td><?php echo $row['permitno']; ?></td>
                                         <td><?php echo $row['permitupto']; ?></td>
@@ -66,7 +66,7 @@ $results = mysqli_query($conn, "SELECT * FROM vehiclemaster");
                                         <td><?php echo $row['insuranceupto']; ?></td>
                                         <td><?php echo $row['fc']; ?></td>
                                         <td><?php echo $row['fcupto']; ?></td>
-                                       
+
                                         <td>
                                         <a title="Edit" href="vehicle-master-edit.php?v_id=<?php echo $row['v_id']; ?>">
                                         <i class="fa fa-edit"></i>
@@ -90,3 +90,11 @@ $results = mysqli_query($conn, "SELECT * FROM vehiclemaster");
         </div><!-- .content -->
 
 <?php include('footer.php'); ?>
+<script>
+    (function($) {
+      "use strict";
+      $('.fleet').addClass('show');
+      $('.fleetSubMenu').addClass('show')
+       $('.vehicles').addClass('active');
+    })(jQuery);
+</script>

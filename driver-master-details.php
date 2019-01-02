@@ -1,8 +1,8 @@
 <?php
 session_start();
- include('header.php'); 
- include('connection.php'); 
-$results = mysqli_query($conn, "SELECT * FROM drivermaster"); 
+ include('header.php');
+ include('connection.php');
+$results = mysqli_query($conn, "SELECT * FROM drivermaster");
 
 ?>
 
@@ -57,7 +57,7 @@ $results = mysqli_query($conn, "SELECT * FROM drivermaster");
                                     <?php while ($row = mysqli_fetch_array($results)) { ?>
                                         <tr>
                                         <td><?php echo $row['drivername']; ?></td>
-                                    
+
                                         <td><?php echo $row['dlno']; ?></td>
                                         <td><?php echo $row['addresss']; ?></td>
                                         <td><?php echo $row['phnumber']; ?></td>
@@ -88,3 +88,11 @@ $results = mysqli_query($conn, "SELECT * FROM drivermaster");
         </div><!-- .content -->
 
 <?php include('footer.php'); ?>
+<script>
+    (function($) {
+      "use strict";
+      $('.fleet').addClass('show');
+      $('.fleetSubMenu').addClass('show')
+       $('.driver').addClass('active');
+    })(jQuery);
+</script>

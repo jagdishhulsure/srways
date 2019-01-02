@@ -1,5 +1,5 @@
-<?php 
-include('header.php'); 
+<?php
+include('header.php');
 include_once("connection.php");
 
 if(isset($_POST['submit'])) {
@@ -7,8 +7,8 @@ if(isset($_POST['submit'])) {
     $vehiclenumber = $_POST['vehiclenumber'];
     $vehicletype = $_POST['vehicletype'];
     $remarks = $_POST['remarks'];
-    
-   
+
+
   //insert data to database
         $result = mysqli_query($conn, "INSERT INTO vehiclemaintenance(vehiclenumber,vehicletype,remarks)
                                                             VALUES('$vehiclenumber','$vehicletype','$remarks')");
@@ -50,7 +50,7 @@ if(isset($_POST['submit'])) {
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
 
-                            
+
                         <div class="card">
 
                             <div class="card-header"><strong>Vehicle Maintenance Booking</strong><small></small>
@@ -101,3 +101,11 @@ if(isset($_POST['submit'])) {
             <!-- Right Panel -->
 <?php include('footer.php'); ?>
 
+<script>
+    (function($) {
+      "use strict";
+      $('.fleet').addClass('show');
+      $('.fleetSubMenu').addClass('show')
+       $('.vehicleMaintenance').addClass('active');
+    })(jQuery);
+</script>

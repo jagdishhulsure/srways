@@ -222,6 +222,8 @@ include('header.php');
         (function($) {
             "use strict";
 
+            $('.dashboard').addClass('active');
+
             jQuery('#vmap').vectorMap({
                 map: 'world_en',
                 backgroundColor: null,
